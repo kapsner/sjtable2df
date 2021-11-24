@@ -104,8 +104,17 @@ mtab2df <- function(mtab, n_models, output = "data.table", ...) {
   ) %>% unlist()
 
   # get rows to suppress
-  suppress_rows <- which(stats_table[, 1] == "Observations"):nrow(stats_table)
+  values_col_one <- stats_table[, 1] %>% unlist()
+  if ("Random Effects" %in% values_col_one) {
+    suppress_term <- "Random Effects"
+  } else if ("Observations" %in% values_col_one){
+    suppress_term <- "Observations"
+  }
 
+  suppress_rows <- which(
+    stats_table[, 1] == suppress_term):nrow(stats_table)
+
+  # suprress info
   for (colnum in suppress_cols) {
     stats_table[suppress_rows, (colnum) := ""]
   }

@@ -62,6 +62,8 @@ usethis::use_package("knitr", type = "Suggests")
 usethis::use_package("rmarkdown", type = "Suggests")
 usethis::use_package("mlbench", type = "Suggests")
 usethis::use_package("sjPlot", type = "Suggests")
+usethis::use_package("stats", type = "Suggests")
+usethis::use_package("lme4", type = "Suggests")
 
 
 # dev packages

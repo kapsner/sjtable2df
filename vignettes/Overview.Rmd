@@ -89,7 +89,7 @@ xtab_kbl %>%
   )
 ```
 
-# Example: Model Tables
+# Example: Model Tables: Logistic Regression
 
 ## Create Three Models
 
@@ -105,7 +105,75 @@ m1 <- stats::glm(
   family = binomial(link = "logit")
 )
 m2 <- stats::glm(
-  diabetes ~ pressure,
+  diabetes ~ glucose + pressure,
+  data = dataset,
+  family = binomial(link = "logit")
+)
+```
+
+## Create Model Table
+
+```{r}
+m_table <- sjPlot::tab_model(
+  m0, m1, m2,
+  show.aic = TRUE
+)
+```
+
+
+```{r results='asis'}
+m_table
+```
+
+## Convert Model Table to `data.frame`
+
+```{r}
+mtab_df <- sjtable2df::mtab2df(
+  mtab = m_table,
+  n_models = 3,
+  output = "data.frame"
+)
+class(mtab_df)
+mtab_df
+```
+
+## Convert Model Table to `kable`
+
+```{r}
+mtab_kbl <- sjtable2df::mtab2df(
+  mtab = m_table,
+  n_models = 3,
+  output = "kable"
+)
+class(mtab_kbl)
+mtab_kbl
+```
+
+
+
+# Example: Model Tables: GLMM
+
+## Create Three Models
+
+```{r}
+set.seed(1)
+dataset$city <- sample(
+  x = paste0("city_", 1:7),
+  size = nrow(dataset),
+  replace = TRUE
+)
+m0 <- lme4::glmer(
+  diabetes ~ 1 + (1 | city),
+  data = dataset,
+  family = binomial(link = "logit")
+)
+m1 <- lme4::glmer(
+  diabetes ~ mass + (1 | city),
+  data = dataset,
+  family = binomial(link = "logit")
+)
+m2 <- lme4::glmer(
+  diabetes ~ mass + log(pressure) + (1 | city),
   data = dataset,
   family = binomial(link = "logit")
 )
