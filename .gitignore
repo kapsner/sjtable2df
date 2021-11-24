@@ -2,12 +2,15 @@
 /*/*
 
 *.log
-!/.gitignore
+!.gitignore
 !/.Rbuildignore
 
+!*.R
+!*.Rd
+!*.yml
+!*.Rmd
+
 !/data-raw/
-/data-raw/*
-!/data-raw/devstuffs.R
 
 !/DESCRIPTION
 !/NAMESPACE
@@ -34,6 +37,8 @@
 
 !/.lintr
 !/.github/
+/.github/*
+!/.github/workflows
 !/tic.R
 
 /inst/doc
