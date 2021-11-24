@@ -91,7 +91,7 @@ xtab2df <- function(xtab, output = "data.table", ...) {
     if (output == "data.frame") {
       final_table %>%
         as.data.frame() %>%
-        return(.)
+        return()
     } else {
       return(final_table)
     }
@@ -106,7 +106,7 @@ xtab2df <- function(xtab, output = "data.table", ...) {
           notation = "none",
           escape = FALSE
         ) %>%
-        return(.)
+        return()
     } else {
       return(final_table)
     }
