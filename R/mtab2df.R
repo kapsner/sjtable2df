@@ -107,6 +107,25 @@ mtab2df <- function(mtab, n_models, output = "data.table", ...) {
   values_col_one <- stats_table[, 1] %>% unlist()
   if ("Random Effects" %in% values_col_one) {
     suppress_term <- "Random Effects"
+    # remove multiple occurence of "Random Effects"
+    append_row <- invisible(lapply(
+      X = c(
+        suppress_term,
+        rep("", times = (ncol(stats_table) - 1))
+      ),
+      FUN = function(x) {
+        return(x)
+      }
+    ))
+    stats_table <- data.table::rbindlist(
+      l = list(
+        stats_table[1:(which(stats_table[, 1] == suppress_term) - 1), ],
+        append_row,
+        stats_table[(which(stats_table[, 1] == suppress_term) + 1):nrow(
+          stats_table
+        ), ]
+      )
+    )
   } else if ("Observations" %in% values_col_one){
     suppress_term <- "Observations"
   }
