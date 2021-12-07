@@ -104,6 +104,7 @@ xtab2df <- function(xtab, output = "data.table", ...) {
         kableExtra::add_footnote(
           label = paste0("$", stats_summary, "$"),
           notation = "none",
+          threeparttable = TRUE,
           escape = FALSE
         ) %>%
         return()
