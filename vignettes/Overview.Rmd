@@ -89,6 +89,65 @@ xtab_kbl %>%
   )
 ```
 
+
+# Example: Model Tables: Linear Regression
+
+## Create Three Models
+
+```{r}
+m0 <- lm(
+  pressure ~ 1,
+  data = dataset
+)
+m1 <- lm(
+  pressure ~ glucose,
+  data = dataset
+)
+m2 <- lm(
+  pressure ~ glucose + diabetes,
+  data = dataset
+)
+```
+
+## Create Model Table
+
+```{r}
+m_table <- sjPlot::tab_model(
+  m0, m1, m2,
+  show.aic = TRUE
+)
+```
+
+
+```{r results='asis'}
+m_table
+```
+
+## Convert Model Table to `data.frame`
+
+```{r}
+mtab_df <- sjtable2df::mtab2df(
+  mtab = m_table,
+  n_models = 3,
+  output = "data.frame"
+)
+class(mtab_df)
+mtab_df
+```
+
+## Convert Model Table to `kable`
+
+```{r}
+mtab_kbl <- sjtable2df::mtab2df(
+  mtab = m_table,
+  n_models = 3,
+  output = "kable"
+)
+class(mtab_kbl)
+mtab_kbl
+```
+
+
 # Example: Model Tables: Logistic Regression
 
 ## Create Three Models

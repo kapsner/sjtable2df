@@ -19,12 +19,14 @@ Imports:
 Suggests: 
     knitr,
     lintr,
+    lme4,
     mlbench,
     rmarkdown,
     sjPlot,
+    stats,
     testthat (>= 3.0.1)
 VignetteBuilder: 
     knitr
-Date/Publication: 2021-11-15 23:30:14 UTC
+Date/Publication: 2021-12-07 16:45:57 UTC
 Encoding: UTF-8
 RoxygenNote: 7.1.2
