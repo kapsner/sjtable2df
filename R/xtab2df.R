@@ -25,6 +25,9 @@
 #'   "data.frame" or "kable". The function's return value is of the respective
 #'   type.
 #'
+#' @param threeparttable A boolean (default: FALSE). Should the footnote be
+#'    added as a 'threeparttable'?
+#'
 #' @param ... Further arguments to be passed to `kableExtra::kbl`.
 #'
 #' @return An object of the type specified with the `output` argument.
@@ -59,7 +62,11 @@
 #'
 #' @export
 #'
-xtab2df <- function(xtab, output = "data.table", ...) {
+xtab2df <- function(
+  xtab,
+  output = "data.table",
+  threeparttable = FALSE,
+  ...) {
   stopifnot(inherits(xtab, "sjtxtab"))
 
   # create statistics table
@@ -104,7 +111,7 @@ xtab2df <- function(xtab, output = "data.table", ...) {
         kableExtra::add_footnote(
           label = paste0("$", stats_summary, "$"),
           notation = "none",
-          threeparttable = TRUE,
+          threeparttable = threeparttable,
           escape = FALSE
         ) %>%
         return()
