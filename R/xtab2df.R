@@ -25,16 +25,15 @@
 #'   "data.frame" or "kable". The function's return value is of the respective
 #'   type.
 #'
-#' @param threeparttable A boolean (default: FALSE). Should the footnote be
-#'    added as a 'threeparttable'?
-#'
 #' @param ... Further arguments to be passed to `kableExtra::kbl`.
 #'
 #' @return An object of the type specified with the `output` argument.
 #'
 #' @import data.table
 #' @importFrom magrittr "%>%"
-
+#'
+#' @inheritParams kableExtra::add_footnote
+#'
 #' @examples
 #' set.seed(1)
 #' dataset <- data.table::data.table(

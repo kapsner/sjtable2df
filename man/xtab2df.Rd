@@ -4,7 +4,7 @@
 \alias{xtab2df}
 \title{xtab2df}
 \usage{
-xtab2df(xtab, output = "data.table", ...)
+xtab2df(xtab, output = "data.table", threeparttable = FALSE, ...)
 }
 \arguments{
 \item{xtab}{A contingency table, created with `sjPlot::tab_xtab`.}
@@ -12,6 +12,10 @@ xtab2df(xtab, output = "data.table", ...)
 \item{output}{A character vector. Allowed values are: "data.table" (default),
 "data.frame" or "kable". The function's return value is of the respective
 type.}
+
+\item{threeparttable}{Boolean value indicating if a
+\href{https://www.ctan.org/pkg/threeparttable}{threeparttable} scheme should
+be used.}
 
 \item{...}{Further arguments to be passed to `kableExtra::kbl`.}
 }
