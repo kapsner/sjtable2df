@@ -70,7 +70,6 @@ xtab2df <- function(
 
   # create statistics table
   stats_table <- get_html_table(tab = xtab)
-  stats_table <- xtab_colnames(tab = stats_table)
 
   # get summary statistics
   stats_summary <- get_xtab_summary(xtab = xtab)

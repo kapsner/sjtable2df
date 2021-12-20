@@ -89,6 +89,30 @@ xtab_kbl %>%
   )
 ```
 
+## Percentages in cells
+
+This function also extracts further statistics from cells and writes them to parentheses:
+
+```{r}
+xtab <- sjPlot::tab_xtab(
+  var.row = dataset$diabetes,
+  var.col = dataset$preg_gt_4,
+  show.summary = TRUE,
+  show.col.prc = TRUE,
+  use.viewer = FALSE
+)
+```
+
+```{r results='asis'}
+xtab
+```
+
+## Convert Contingency Table to `data.frame`
+
+```{r}
+xtab_df <- sjtable2df::xtab2df(xtab = xtab, output = "data.frame")
+xtab_df
+```
 
 # Example: Model Tables: Linear Regression
 

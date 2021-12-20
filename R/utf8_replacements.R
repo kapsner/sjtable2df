@@ -23,7 +23,7 @@ utf_replacement_list <- list(
   "R2 / R2 adjusted" = "$R^2$ / $R^2$ adjusted"
 )
 
-utf_replacements <- function(vec) {
+utf_replacements <- function(vec, kable_mtab = FALSE) {
   for (item in names(utf_replacement_list)) {
     row <- which(grepl(item, vec))
     if (length(row) > 0) {

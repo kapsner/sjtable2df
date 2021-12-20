@@ -151,7 +151,10 @@ mtab2df <- function(mtab, n_models, output = "data.table", ...) {
   } else if (output == "kable") {
     # utf8 replacements for kable
     first_col <- colnames(stats_table)[1]
-    stats_table[, (first_col) := utf_replacements(vec = get(first_col))]
+    stats_table[, (first_col) := utf_replacements(
+      vec = get(first_col),
+      kable_mtab = TRUE
+    )]
 
     final_table <- stats_table %>%
       kableExtra::kbl(...)
