@@ -14,14 +14,31 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-get_html_table <- function(tab) {
-  tab_content <- tab$page.content %>%
+get_html_table_elements <- function(tab) {
+  tab$page.content %>%
     rvest::minimal_html() %>%
-    rvest::html_element(css = "table")
+    rvest::html_element(css = "table") %>%
+    return()
+}
 
-  out_tab <- tab_content %>%
+parse_html_table <- function(tab_content) {
+  tab_content %>%
     rvest::html_table() %>%
-    data.table::data.table()
+    data.table::data.table() %>%
+    return()
+}
+
+get_html_table <- function(tab) {
+  tab %>%
+    get_html_table_elements() %>%
+    parse_html_table() %>%
+    return()
+}
+
+get_xtab_html_table <- function(tab) {
+
+  tab_content <- get_html_table_elements(tab)
+  out_tab <- parse_html_table(tab_content)
 
   out_tab <- xtab_colnames(tab = out_tab)
 
@@ -41,7 +58,11 @@ get_html_table <- function(tab) {
       )
       cell_addons <- xml2::xml_find_all(
         cells[[xtab_row]],
-        xpath = ".//span[contains(@class, 'td_c')]"
+        xpath = paste0(
+          ".//span[contains(@class, 'td_c') or ", # col / cell percentages
+          "contains(@class, 'td_rw') or ", # row percentages
+          "contains(@class, 'td_ex')]" # expected values
+        )
       )
 
       if (length(cell_addons) == 0) {

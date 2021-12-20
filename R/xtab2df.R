@@ -69,7 +69,7 @@ xtab2df <- function(
   stopifnot(inherits(xtab, "sjtxtab"))
 
   # create statistics table
-  stats_table <- get_html_table(tab = xtab)
+  stats_table <- get_xtab_html_table(tab = xtab)
 
   # get summary statistics
   stats_summary <- get_xtab_summary(xtab = xtab)
