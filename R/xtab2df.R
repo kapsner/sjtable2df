@@ -16,7 +16,7 @@
 
 #' @title xtab2df
 #'
-#' @description Convert `sjPlot::tab_xtab`-objects to R data.frame or
+#' @description Convert table from `sjPlot::tab_xtab` to R data.frame or
 #'   `knitr::kable`
 #'
 #' @param xtab A contingency table, created with `sjPlot::tab_xtab`.
@@ -27,7 +27,8 @@
 #'
 #' @param ... Further arguments to be passed to `kableExtra::kbl`.
 #'
-#' @return An object of the type specified with the `output` argument.
+#' @return The table is returned as an R object of the type specified with
+#'   the `output` argument.
 #'
 #' @import data.table
 #' @importFrom magrittr "%>%"

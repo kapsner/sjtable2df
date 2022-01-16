@@ -20,10 +20,11 @@ be used.}
 \item{...}{Further arguments to be passed to `kableExtra::kbl`.}
 }
 \value{
-An object of the type specified with the `output` argument.
+The table is returned as an R object of the type specified with
+  the `output` argument.
 }
 \description{
-Convert `sjPlot::tab_xtab`-objects to R data.frame or
+Convert table from `sjPlot::tab_xtab` to R data.frame or
   `knitr::kable`
 }
 \examples{

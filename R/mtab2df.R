@@ -16,7 +16,7 @@
 
 #' @title mtab2df
 #'
-#' @description Convert `sjPlot::tab_model`-objects to R data.frame or
+#' @description Convert table from `sjPlot::tab_model` to R data.frame or
 #'   `knitr::kable`
 #'
 #' @param mtab A model table, created with `sjPlot::tab_model`.
@@ -25,7 +25,8 @@
 #'
 #' @inheritParams xtab2df
 #'
-#' @return An object of the type specified with the `output` argument.
+#' @return The table is returned as an R object of the type specified with
+#'   the `output` argument.
 #'
 #' @import data.table
 #' @importFrom magrittr "%>%"
