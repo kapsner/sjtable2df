@@ -30,3 +30,4 @@ VignetteBuilder:
     knitr
 Date/Publication: 2022-01-16 12:56:31 UTC
 Encoding: UTF-8
+RoxygenNote: 7.1.2
