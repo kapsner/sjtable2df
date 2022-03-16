@@ -44,6 +44,70 @@ test_that(
 
     expect_type(final_tab, "character")
     expect_true(inherits(final_tab, "knitr_kable"))
+
+
+    # with more statistics: cell.prc
+    xtab <- sjPlot::tab_xtab(
+      var.row = dataset$var1,
+      var.col = dataset$var2,
+      show.summary = TRUE,
+      show.cell.prc = TRUE,
+      use.viewer = FALSE
+    )
+
+    final_tab <- sjtable2df::xtab2df(xtab = xtab)
+
+    expect_type(final_tab, "list")
+    expect_true(inherits(final_tab, "data.table"))
+    expect_true(nrow(final_tab) == 4)
+
+
+    # with more statistics: col.prc
+    xtab <- sjPlot::tab_xtab(
+      var.row = dataset$var1,
+      var.col = dataset$var2,
+      show.summary = TRUE,
+      show.col.prc = TRUE,
+      use.viewer = FALSE
+    )
+
+    final_tab <- sjtable2df::xtab2df(xtab = xtab)
+
+    expect_type(final_tab, "list")
+    expect_true(inherits(final_tab, "data.table"))
+    expect_true(nrow(final_tab) == 4)
+
+
+    # with more statistics: row.prc
+    xtab <- sjPlot::tab_xtab(
+      var.row = dataset$var1,
+      var.col = dataset$var2,
+      show.summary = TRUE,
+      show.row.prc = TRUE,
+      use.viewer = FALSE
+    )
+
+    final_tab <- sjtable2df::xtab2df(xtab = xtab)
+
+    expect_type(final_tab, "list")
+    expect_true(inherits(final_tab, "data.table"))
+    expect_true(nrow(final_tab) == 4)
+
+
+    # with more statistics: show.exp
+    xtab <- sjPlot::tab_xtab(
+      var.row = dataset$var1,
+      var.col = dataset$var2,
+      show.summary = TRUE,
+      show.exp = TRUE,
+      use.viewer = FALSE
+    )
+
+    final_tab <- sjtable2df::xtab2df(xtab = xtab)
+
+    expect_type(final_tab, "list")
+    expect_true(inherits(final_tab, "data.table"))
+    expect_true(nrow(final_tab) == 4)
   }
 )
 

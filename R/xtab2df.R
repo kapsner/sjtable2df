@@ -16,7 +16,7 @@
 
 #' @title xtab2df
 #'
-#' @description Convert `sjPlot::tab_xtab`-objects to R data.frame or
+#' @description Convert table from `sjPlot::tab_xtab` to R data.frame or
 #'   `knitr::kable`
 #'
 #' @param xtab A contingency table, created with `sjPlot::tab_xtab`.
@@ -27,11 +27,14 @@
 #'
 #' @param ... Further arguments to be passed to `kableExtra::kbl`.
 #'
-#' @return An object of the type specified with the `output` argument.
+#' @return The table is returned as an R object of the type specified with
+#'   the `output` argument.
 #'
 #' @import data.table
 #' @importFrom magrittr "%>%"
-
+#'
+#' @inheritParams kableExtra::add_footnote
+#'
 #' @examples
 #' set.seed(1)
 #' dataset <- data.table::data.table(
@@ -59,12 +62,15 @@
 #'
 #' @export
 #'
-xtab2df <- function(xtab, output = "data.table", ...) {
+xtab2df <- function(
+  xtab,
+  output = "data.table",
+  threeparttable = FALSE,
+  ...) {
   stopifnot(inherits(xtab, "sjtxtab"))
 
   # create statistics table
-  stats_table <- get_html_table(tab = xtab)
-  stats_table <- xtab_colnames(tab = stats_table)
+  stats_table <- get_xtab_html_table(tab = xtab)
 
   # get summary statistics
   stats_summary <- get_xtab_summary(xtab = xtab)
@@ -104,6 +110,7 @@ xtab2df <- function(xtab, output = "data.table", ...) {
         kableExtra::add_footnote(
           label = paste0("$", stats_summary, "$"),
           notation = "none",
+          threeparttable = threeparttable,
           escape = FALSE
         ) %>%
         return()

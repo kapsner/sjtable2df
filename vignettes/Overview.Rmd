@@ -89,6 +89,89 @@ xtab_kbl %>%
   )
 ```
 
+## Percentages in cells
+
+This function also extracts further statistics from cells and writes them to parentheses:
+
+```{r}
+xtab <- sjPlot::tab_xtab(
+  var.row = dataset$diabetes,
+  var.col = dataset$preg_gt_4,
+  show.summary = TRUE,
+  show.col.prc = TRUE,
+  use.viewer = FALSE
+)
+```
+
+```{r results='asis'}
+xtab
+```
+
+## Convert Contingency Table to `data.frame`
+
+```{r}
+xtab_df <- sjtable2df::xtab2df(xtab = xtab, output = "data.frame")
+xtab_df
+```
+
+# Example: Model Tables: Linear Regression
+
+## Create Three Models
+
+```{r}
+m0 <- lm(
+  pressure ~ 1,
+  data = dataset
+)
+m1 <- lm(
+  pressure ~ glucose,
+  data = dataset
+)
+m2 <- lm(
+  pressure ~ glucose + diabetes,
+  data = dataset
+)
+```
+
+## Create Model Table
+
+```{r}
+m_table <- sjPlot::tab_model(
+  m0, m1, m2,
+  show.aic = TRUE
+)
+```
+
+
+```{r results='asis'}
+m_table
+```
+
+## Convert Model Table to `data.frame`
+
+```{r}
+mtab_df <- sjtable2df::mtab2df(
+  mtab = m_table,
+  n_models = 3,
+  output = "data.frame"
+)
+class(mtab_df)
+mtab_df
+```
+
+## Convert Model Table to `kable`
+
+```{r}
+mtab_kbl <- sjtable2df::mtab2df(
+  mtab = m_table,
+  n_models = 3,
+  output = "kable"
+)
+class(mtab_kbl)
+mtab_kbl
+```
+
+
 # Example: Model Tables: Logistic Regression
 
 ## Create Three Models

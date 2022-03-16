@@ -16,7 +16,7 @@
 
 #' @title mtab2df
 #'
-#' @description Convert `sjPlot::tab_model`-objects to R data.frame or
+#' @description Convert table from `sjPlot::tab_model` to R data.frame or
 #'   `knitr::kable`
 #'
 #' @param mtab A model table, created with `sjPlot::tab_model`.
@@ -25,12 +25,14 @@
 #'
 #' @inheritParams xtab2df
 #'
-#' @return An object of the type specified with the `output` argument.
+#' @return The table is returned as an R object of the type specified with
+#'   the `output` argument.
 #'
 #' @import data.table
 #' @importFrom magrittr "%>%"
 
 #' @examples
+#' \donttest{
 #' set.seed(1)
 #' dataset <- data.table::data.table(
 #'   "var1" = factor(sample(
@@ -67,7 +69,7 @@
 #' m_table <- sjPlot::tab_model(m0, m1, m2, show.aic = TRUE)
 #'
 #' final_tab <- sjtable2df::mtab2df(mtab = m_table, n_models = 3)
-#'
+#' }
 #' @export
 #'
 mtab2df <- function(mtab, n_models, output = "data.table", ...) {
@@ -126,7 +128,7 @@ mtab2df <- function(mtab, n_models, output = "data.table", ...) {
         ), ]
       )
     )
-  } else if ("Observations" %in% values_col_one){
+  } else if ("Observations" %in% values_col_one) {
     suppress_term <- "Observations"
   }
 
@@ -149,6 +151,13 @@ mtab2df <- function(mtab, n_models, output = "data.table", ...) {
       return(stats_table)
     }
   } else if (output == "kable") {
+    # utf8 replacements for kable
+    first_col <- colnames(stats_table)[1]
+    stats_table[, (first_col) := utf_replacements(
+      vec = get(first_col),
+      kable_mtab = TRUE
+    )]
+
     final_table <- stats_table %>%
       kableExtra::kbl(...)
 

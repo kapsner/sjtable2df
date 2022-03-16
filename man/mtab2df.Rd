@@ -18,13 +18,15 @@ type.}
 \item{...}{Further arguments to be passed to `kableExtra::kbl`.}
 }
 \value{
-An object of the type specified with the `output` argument.
+The table is returned as an R object of the type specified with
+  the `output` argument.
 }
 \description{
-Convert `sjPlot::tab_model`-objects to R data.frame or
+Convert table from `sjPlot::tab_model` to R data.frame or
   `knitr::kable`
 }
 \examples{
+\donttest{
 set.seed(1)
 dataset <- data.table::data.table(
   "var1" = factor(sample(
@@ -61,5 +63,5 @@ m2 <- stats::glm(
 m_table <- sjPlot::tab_model(m0, m1, m2, show.aic = TRUE)
 
 final_tab <- sjtable2df::mtab2df(mtab = m_table, n_models = 3)
-
+}
 }

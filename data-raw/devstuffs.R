@@ -18,7 +18,7 @@ my_desc$set_authors(c(
 # Remove some author fields
 my_desc$del("Maintainer")
 # Set the version
-my_desc$set_version("0.0.1")
+my_desc$set_version("0.0.1.9002")
 # The title of your package
 my_desc$set(Title = "Convert 'sjPlot' HTML-Tables to R 'data.frame'")
 # The description of your package
@@ -53,6 +53,7 @@ usethis::use_package("data.table", type="Imports")
 usethis::use_package("kableExtra", type="Imports")
 usethis::use_package("magrittr", type="Imports")
 usethis::use_package("rvest", type="Imports")
+usethis::use_package("xml2", type="Imports")
 #usethis::use_package("utils", type="Imports")
 
 # Suggests
@@ -76,5 +77,16 @@ usethis::use_build_ignore("cran-comments.md")
 usethis::use_build_ignore(".lintr")
 usethis::use_build_ignore("tic.R")
 usethis::use_build_ignore(".github")
+usethis::use_build_ignore("NEWS.md")
+
+usethis::use_git_ignore("!NEWS.md")
 
 usethis::use_tidy_description()
+
+
+# create NEWS.md using the python-package "auto-changelog" (must be installed)
+# https://www.conventionalcommits.org/en/v1.0.0/
+# build|ci|docs|feat|fix|perf|refactor|test
+system(
+  command = 'auto-changelog -u -t "sjtable2df NEWS" --tag-prefix "v" -o "NEWS.md"'
+)

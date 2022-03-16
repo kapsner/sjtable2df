@@ -43,3 +43,4 @@
 
 /inst/doc
 .Rproj.user
+!NEWS.md
