@@ -16,7 +16,7 @@
 
 get_html_table <- function(tab) {
   tab$page.content %>%
-    rvest::minimal_html() %>%
+    rvest::read_html() %>%
     rvest::html_element(css = "table") %>%
     rvest::html_table() %>%
     data.table::data.table() %>%
