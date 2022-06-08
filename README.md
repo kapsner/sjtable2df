@@ -1,7 +1,7 @@
 # sjtable2df
 
 <!-- badges begin -->
-[![R build status](https://github.com/kapsner/sjtable2df/workflows/R CMD Check via {tic}/badge.svg?branch=main)](https://github.com/kapsner/sjtable2df/actions)
+[![R build status](https://github.com/kapsner/sjtable2df/workflows/R%20CMD%20Check%20via%20{tic}/badge.svg?branch=main)](https://github.com/kapsner/sjtable2df/actions)
 [![linting](https://github.com/kapsner/sjtable2df/workflows/lint/badge.svg?branch=main)](https://github.com/kapsner/sjtable2df/actions)
 [![test-coverage](https://github.com/kapsner/sjtable2df/workflows/test-coverage/badge.svg?branch=main)](https://github.com/kapsner/sjtable2df/actions)
 [![codecov](https://codecov.io/gh/kapsner/sjtable2df/branch/main/graph/badge.svg?branch=main)](https://app.codecov.io/gh/kapsner/sjtable2df)
@@ -74,3 +74,6 @@ sjtable2df::xtab2df(xtab = xtab, output = "kable", format = "latex")
 #> \end{tabular}
 ```
 
+## More Information
+
+- [sjPlot R package](https://cran.r-project.org/web/packages/sjPlot/index.html)
