@@ -18,9 +18,9 @@ knitr::opts_chunk$set(
 
 The [`sjPlot`](https://CRAN.R-project.org/package=sjPlot) R package is a great package for visualizing results.
 
-However, the tables created using the functions [`sjPlot::tab_model`](https://www.rdocumentation.org/packages/sjPlot/versions/2.8.4/topics/tab_model) or [`sjPlot::tab_xtab`](https://www.rdocumentation.org/packages/sjPlot/versions/2.8.4/topics/tab_xtab) return HTML tables, which are not straightforward to integrate into pdf-document or word-document Rmarkdown reports.
+However, the tables created using the functions [`sjPlot::tab_model`](https://www.rdocumentation.org/packages/sjPlot/versions/2.8.4/topics/tab_model) or [`sjPlot::tab_xtab`](https://www.rdocumentation.org/packages/sjPlot/versions/2.8.4/topics/tab_xtab) return HTML tables and are not straightforward to use in R, especially when trying to integrate them into pdf- or word-documents using Rmarkdown.
 
-Various approaches/tutorials exist to convert `sjPlot` HTML tables to R `data.frame` objects: 
+Various approaches/ tutorials exist to convert `sjPlot` HTML tables to R `data.frame` objects: 
 
 * https://stackoverflow.com/questions/63053465/how-to-convert-an-html-sjtable-from-the-sjplot-package-to-latex
 * https://stackoverflow.com/questions/47744396/how-to-format-an-sjplot-in-pdf-rmarkdown
@@ -29,7 +29,9 @@ Various approaches/tutorials exist to convert `sjPlot` HTML tables to R `data.fr
 
 None of these approaches converts `sjPlot` HTML tables to R `data.frame` objects or integrates well with `knitr::kable` or the [`kableExtra`](https://CRAN.R-project.org/package=kableExtra) R package. 
 
-The `sjtable2df` R package's goal is to overcome this and to provide an easy interface for converting `sjPlot`'s HTML tables to `data.frame`, `data.table`, or `kable` objects.
+The `sjtable2df` R package's goal is to overcome this and to provide an easy interface for converting `sjPlot`'s HTML tables to `data.frame`, `data.table`, or `kable` objects for further usage in R or Rmarkdown.
+
+Currently, `sjtable2df` provides two functions to convert tables created from `sjPlot`'s functions [`tab_model`](https://www.rdocumentation.org/packages/sjPlot/versions/2.8.4/topics/tab_model) and [`tab_xtab`](https://www.rdocumentation.org/packages/sjPlot/versions/2.8.4/topics/tab_xtab): `sjtable2df::mtab2df` and `sjtable2df::xtab2df`.
 
 # Example: Contingency-Tables
 

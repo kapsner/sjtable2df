@@ -1,6 +1,6 @@
 # sjtable2df NEWS
 
-## Unreleased (2022-03-16)
+## Unreleased (2022-06-08)
 
 #### Fixes
 
@@ -10,10 +10,11 @@
 * updated return values
 #### Others
 
+* updated description and news.md
 * fixed missing whitespace
 * added news.md
 
-Full set of changes: [`v0.0.1...7a40408`](https://github.com/kapsner/sjtable2df/compare/v0.0.1...7a40408)
+Full set of changes: [`v0.0.1...550db85`](https://github.com/kapsner/sjtable2df/compare/v0.0.1...550db85)
 
 ## v0.0.1 (2021-12-20)
 

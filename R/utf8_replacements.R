@@ -16,9 +16,9 @@
 
 
 utf_replacement_list <- list(
-  "\u03c400" = "$\u03c4_{00}$",
+  "\u03c4" = "${\u03c4}_{00}$",
   "Marginal R2 / Conditional R2" = "Marginal $R^2$ / Conditional $R^2$",
-  "\u03c32" = "$\u03c3^2$",
+  "\u03c3" = "${\u03c3}^2$",
   "R2 Tjur" = "$R^2$ Tjur",
   "R2 / R2 adjusted" = "$R^2$ / $R^2$ adjusted"
 )
