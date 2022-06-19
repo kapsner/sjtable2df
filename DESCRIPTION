@@ -15,6 +15,7 @@ Imports:
     data.table,
     kableExtra,
     magrittr,
+    rlang,
     rvest,
     xml2
 Suggests: 
@@ -28,6 +29,6 @@ Suggests:
     testthat (>= 3.0.1)
 VignetteBuilder: 
     knitr
-Date/Publication: 2022-06-08 19:32:44 UTC
+Date/Publication: 2022-06-19 19:29:10 UTC
 Encoding: UTF-8
-RoxygenNote: 7.1.2
+RoxygenNote: 7.2.0

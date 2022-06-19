@@ -45,16 +45,16 @@ my_desc$write(file = "DESCRIPTION")
 usethis::use_gpl3_license()
 
 # Depends
-usethis::use_package("R", min_version = "2.10", type="Depends")
+usethis::use_package("R", min_version = "2.10", type = "Depends")
 
 # Imports
 # https://cran.r-project.org/web/packages/data.table/vignettes/datatable-importing.html
-usethis::use_package("data.table", type="Imports")
-usethis::use_package("kableExtra", type="Imports")
-usethis::use_package("magrittr", type="Imports")
-usethis::use_package("rvest", type="Imports")
-usethis::use_package("xml2", type="Imports")
-#usethis::use_package("utils", type="Imports")
+usethis::use_package("data.table", type = "Imports")
+usethis::use_package("kableExtra", type = "Imports")
+usethis::use_package("magrittr", type = "Imports")
+usethis::use_package("rvest", type = "Imports")
+usethis::use_package("xml2", type = "Imports")
+usethis::use_package("rlang", type = "Imports")
 
 # Suggests
 usethis::use_package("testthat", type = "Suggests", min_version = "3.0.1")

@@ -16,16 +16,25 @@
 
 
 utf_replacement_list <- list(
-  "\u03c4" = "${\u03c4}_{00}$",
+  "03C4" = paste0(
+    "$", rlang::chr_unserialise_unicode("<U+03C4>"), "_{00}$"
+  ),
   "Marginal R2 / Conditional R2" = "Marginal $R^2$ / Conditional $R^2$",
-  "\u03c3" = "${\u03c3}^2$",
+  "03C3" = paste0(
+    "$", rlang::chr_unserialise_unicode("<U+03C3>"), "^2$"
+  ),
   "R2 Tjur" = "$R^2$ Tjur",
   "R2 / R2 adjusted" = "$R^2$ / $R^2$ adjusted"
 )
 
 utf_replacements <- function(vec, kable_mtab = FALSE) {
   for (item in names(utf_replacement_list)) {
-    row <- which(grepl(item, vec))
+    item_pattern <- ifelse(
+      test = item %in% c("03C3", "03C4"),
+      yes = rlang::chr_unserialise_unicode(paste0("<U+", item, ">")),
+      no = item
+    )
+    row <- which(grepl(item_pattern, vec))
     if (length(row) > 0) {
       vec[row] <- utf_replacement_list[[item]]
     }
