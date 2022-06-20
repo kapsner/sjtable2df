@@ -45,3 +45,7 @@
 .Rproj.user
 !NEWS.md
 !README.md
+/doc/
+/Meta/
+docs
+Meta

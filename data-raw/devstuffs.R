@@ -79,17 +79,21 @@ usethis::use_build_ignore("tic.R")
 usethis::use_build_ignore(".github")
 usethis::use_build_ignore("NEWS.md")
 usethis::use_build_ignore("README.md")
+usethis::use_build_ignore("docs")
+usethis::use_build_ignore("Meta")
 
 usethis::use_git_ignore("!NEWS.md")
 usethis::use_git_ignore("!README.md")
+usethis::use_git_ignore("docs")
+usethis::use_git_ignore("Meta")
 
 usethis::use_tidy_description()
 
 
 # https://github.com/gitpython-developers/GitPython/issues/1016#issuecomment-1104114129
-#system(
-#  command = paste0("git config --global --add safe.directory ", getwd())
-#)
+system(
+ command = paste0("git config --global --add safe.directory ", getwd())
+)
 
 # create NEWS.md using the python-package "auto-changelog" (must be installed)
 # https://www.conventionalcommits.org/en/v1.0.0/

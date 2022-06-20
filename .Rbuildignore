@@ -8,3 +8,6 @@
 ^LICENSE\.md$
 ^NEWS\.md$
 ^README\.md$
+^doc$
+^Meta$
+^docs$
