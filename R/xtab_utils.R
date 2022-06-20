@@ -26,5 +26,3 @@ xtab_colnames <- function(tab) {
     paste(colnames(tab)[2], .)
   return(tab[-1, ])
 }
-
-

@@ -23,4 +23,3 @@ get_xtab_summary <- function(xtab) {
     rvest::html_text() %>%
     return()
 }
-

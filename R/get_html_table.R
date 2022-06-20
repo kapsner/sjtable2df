@@ -76,9 +76,9 @@ get_xtab_html_table <- function(tab) {
             rvest::html_text(cell_addons),
             ")"
           )
-        )
-      } %>%
-        return()
+        ) %>%
+          return()
+      }
     }
   ) %>%
     data.table::as.data.table() %>%

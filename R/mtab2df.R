@@ -174,4 +174,3 @@ mtab2df <- function(mtab, n_models, output = "data.table", ...) {
       return()
   }
 }
-

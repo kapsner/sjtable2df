@@ -12,12 +12,16 @@
 * updated return values
 #### Others
 
+* updated gha
+* fixed formatting of lintr-file
+* merging into main
+* updated lintr
 * fixed badge url
 * updated description and news.md
 * fixed missing whitespace
 * added news.md
 
-Full set of changes: [`v0.0.1...6e36249`](https://github.com/kapsner/sjtable2df/compare/v0.0.1...6e36249)
+Full set of changes: [`v0.0.1...b88df55`](https://github.com/kapsner/sjtable2df/compare/v0.0.1...b88df55)
 
 ## v0.0.1 (2021-12-20)
 
