@@ -20,8 +20,9 @@
 * updated description and news.md
 * fixed missing whitespace
 * added news.md
+* added more unit tests with snapshots!
 
-Full set of changes: [`v0.0.1...b88df55`](https://github.com/kapsner/sjtable2df/compare/v0.0.1...b88df55)
+Full set of changes: [`v0.0.1...beab215`](https://github.com/kapsner/sjtable2df/compare/v0.0.1...beab215)
 
 ## v0.0.1 (2021-12-20)
 
