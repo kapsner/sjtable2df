@@ -1,6 +1,11 @@
 # sjtable2df
 
-<!-- badges begin -->
+<!-- badges begin-->
+[![CRAN Status Badge](https://www.r-pkg.org/badges/version-ago/sjtable2df)](https://cran.r-project.org/package=sjtable2df)
+[![CRAN Checks](https://cranchecks.info/badges/worst/sjtable2df)](https://cran.r-project.org/web/checks/check_results_sjtable2df.html)
+[![](http://cranlogs.r-pkg.org/badges/grand-total/sjtable2df?color=blue)](https://cran.r-project.org/package=sjtable2df)
+[![](http://cranlogs.r-pkg.org/badges/last-month/sjtable2df?color=blue)](https://cran.r-project.org/package=sjtable2df)
+[![Dependencies](https://tinyverse.netlify.com/badge/sjtable2df)](https://cran.r-project.org/package=sjtable2df)
 [![R build status](https://github.com/kapsner/sjtable2df/workflows/R%20CMD%20Check%20via%20{tic}/badge.svg?branch=main)](https://github.com/kapsner/sjtable2df/actions)
 [![linting](https://github.com/kapsner/sjtable2df/workflows/lint/badge.svg?branch=main)](https://github.com/kapsner/sjtable2df/actions)
 [![test-coverage](https://github.com/kapsner/sjtable2df/workflows/test-coverage/badge.svg?branch=main)](https://github.com/kapsner/sjtable2df/actions)
