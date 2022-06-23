@@ -31,7 +31,7 @@ remotes::install_github("kapsner/sjtable2df")
 
 ## Example
 
-Further details and examples are given in the package's [vignette](vignettes/Overview.Rmd)
+Further details and examples are given in the package's [vignette](https://cran.r-project.org/web/packages/sjtable2df/vignettes/Overview.html).
 
 ``` r
 library(sjtable2df)
