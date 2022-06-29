@@ -22,7 +22,11 @@ Currently, `sjtable2df` provides two functions to convert tables created from `s
 
 ## Install
 
-The development version is available from Github:
+```{r}
+install.packages("sjtable2df")
+```
+
+The development version is available from GitHub:
 
 ```{r}
 install.packages("remotes")

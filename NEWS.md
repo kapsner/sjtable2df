@@ -1,6 +1,15 @@
 # sjtable2df NEWS
 
-## Unreleased (2022-06-20)
+## Unreleased (2022-06-29)
+
+#### Others
+
+* updated lint-stage
+* updated gha
+
+Full set of changes: [`v0.0.2...fde6c0d`](https://github.com/kapsner/sjtable2df/compare/v0.0.2...fde6c0d)
+
+## v0.0.2 (2022-06-20)
 
 #### Fixes
 
@@ -13,6 +22,7 @@
 #### Others
 
 * updated gha
+* updated news.md
 * fixed formatting of lintr-file
 * merging into main
 * updated lintr
@@ -22,7 +32,7 @@
 * added news.md
 * added more unit tests with snapshots!
 
-Full set of changes: [`v0.0.1...beab215`](https://github.com/kapsner/sjtable2df/compare/v0.0.1...beab215)
+Full set of changes: [`v0.0.1...v0.0.2`](https://github.com/kapsner/sjtable2df/compare/v0.0.1...v0.0.2)
 
 ## v0.0.1 (2021-12-20)
 
