@@ -1,13 +1,14 @@
 # sjtable2df NEWS
 
-## Unreleased (2022-06-29)
+## Unreleased (2022-07-08)
 
 #### Others
 
 * updated lint-stage
 * updated gha
+* updated vignette name; added cran-installation to readme
 
-Full set of changes: [`v0.0.2...fde6c0d`](https://github.com/kapsner/sjtable2df/compare/v0.0.2...fde6c0d)
+Full set of changes: [`v0.0.2...fc1faf4`](https://github.com/kapsner/sjtable2df/compare/v0.0.2...fc1faf4)
 
 ## v0.0.2 (2022-06-20)
 

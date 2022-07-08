@@ -19,12 +19,10 @@ utf_replacement_list <- list(
   "03C4" = paste0(
     "$", rlang::chr_unserialise_unicode("<U+03C4>"), "_{00}$"
   ),
-  "Marginal R2 / Conditional R2" = "Marginal $R^2$ / Conditional $R^2$",
   "03C3" = paste0(
     "$", rlang::chr_unserialise_unicode("<U+03C3>"), "^2$"
   ),
-  "R2 Tjur" = "$R^2$ Tjur",
-  "R2 / R2 adjusted" = "$R^2$ / $R^2$ adjusted"
+  "R2" = "$R^2$"
 )
 
 utf_replacements <- function(vec, kable_mtab = FALSE) {
@@ -36,7 +34,11 @@ utf_replacements <- function(vec, kable_mtab = FALSE) {
     )
     row <- which(grepl(item_pattern, vec))
     if (length(row) > 0) {
-      vec[row] <- utf_replacement_list[[item]]
+      vec[row] <- gsub(
+        pattern = item,
+        replacement = utf_replacement_list[[item]],
+        x = vec[row]
+      )
     }
   }
   return(vec)
