@@ -92,16 +92,16 @@ usethis::use_tidy_description()
 
 
 # https://github.com/gitpython-developers/GitPython/issues/1016#issuecomment-1104114129
-system(
- command = paste0("git config --global --add safe.directory ", getwd())
-)
+# system(
+#  command = paste0("git config --global --add safe.directory ", getwd())
+# )
 
 # create NEWS.md using the python-package "auto-changelog" (must be installed)
 # https://www.conventionalcommits.org/en/v1.0.0/
 # build|ci|docs|feat|fix|perf|refactor|test
-system(
-  command = 'auto-changelog -u -t "sjtable2df NEWS" --tag-prefix "v" -o "NEWS.md"'
-)
+# system(
+#   command = 'auto-changelog -u -t "sjtable2df NEWS" --tag-prefix "v" -o "NEWS.md"'
+# )
 
 #badger::badge_cran_download("sjtable2df", "grand-total", "blue")
 #badger::badge_cran_download("sjtable2df", "last-month", "blue")
@@ -111,3 +111,6 @@ badger::badge_github_actions(action = "lint")
 badger::badge_github_actions(action = "test-coverage")
 
 # nolint end
+an <- autonewsmd::autonewsmd$new(repo_name = packagename)
+an$generate()
+an$write()
