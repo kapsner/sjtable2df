@@ -1,6 +1,6 @@
 # sjtable2df NEWS
 
-## Unreleased (2022-07-08)
+## Unreleased (2022-09-02)
 
 #### Refactorings
 
@@ -9,6 +9,8 @@
 
 #### CI
 
+-   devtools dependencies to tic.r
+    ([9b75143](https://github.com/kapsner/sjtable2df/tree/9b75143c747a36bdb2f86c1c6c804319def85b5f))
 -   updated lint-stage
     ([300723b](https://github.com/kapsner/sjtable2df/tree/300723b096f51c3bb06940bcc1ab49a2362f5c20))
 -   updated gha
@@ -16,11 +18,13 @@
 
 #### Other changes
 
+-   changelog now with autonewsmd
+    ([5a32908](https://github.com/kapsner/sjtable2df/tree/5a3290865b1a9f189ebe81f83d4d7a132ac2a617))
 -   updated vignette name; added cran-installation to readme
     ([fc1faf4](https://github.com/kapsner/sjtable2df/tree/fc1faf416482bed9ea39f595eedd894e5dddc0ed))
 
 Full set of changes:
-[`v0.0.2...2ba438e`](https://github.com/kapsner/sjtable2df/compare/v0.0.2...2ba438e)
+[`v0.0.2...5a32908`](https://github.com/kapsner/sjtable2df/compare/v0.0.2...5a32908)
 
 ## v0.0.2 (2022-06-20)
 
