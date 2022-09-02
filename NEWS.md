@@ -18,13 +18,17 @@
 
 #### Other changes
 
+-   merged development into main
+    ([ce2227a](https://github.com/kapsner/sjtable2df/tree/ce2227a21bd3f3548916c773f775dc5ead776927))
+-   changelog now with autonewsmd
+    ([d502b46](https://github.com/kapsner/sjtable2df/tree/d502b462f36dcb130d660674206037c13dda9574))
 -   changelog now with autonewsmd
     ([5a32908](https://github.com/kapsner/sjtable2df/tree/5a3290865b1a9f189ebe81f83d4d7a132ac2a617))
 -   updated vignette name; added cran-installation to readme
     ([fc1faf4](https://github.com/kapsner/sjtable2df/tree/fc1faf416482bed9ea39f595eedd894e5dddc0ed))
 
 Full set of changes:
-[`v0.0.2...5a32908`](https://github.com/kapsner/sjtable2df/compare/v0.0.2...5a32908)
+[`v0.0.2...ce2227a`](https://github.com/kapsner/sjtable2df/compare/v0.0.2...ce2227a)
 
 ## v0.0.2 (2022-06-20)
 
