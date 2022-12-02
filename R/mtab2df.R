@@ -135,10 +135,13 @@ mtab2df <- function(mtab, n_models, output = "data.table", ...) {
   suppress_rows <- which(
     stats_table[, 1] == suppress_term):nrow(stats_table)
 
-  # suprress info
+  # suppress info
   for (colnum in suppress_cols) {
     stats_table[suppress_rows, (colnum) := ""]
   }
+  
+  # keep significance level information only in the first column:
+  stats_table[nrow(stats_table), 2:ncol(stats_table) := ""]
 
   # data.table output
   if (output %in% c("data.table", "data.frame")) {
