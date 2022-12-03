@@ -80,7 +80,7 @@ sjtable2df::xtab2df(xtab = xtab, output = "kable", format = "latex")
 #> Total & 47 & 53 & 100\\
 #> \hline
 #> \multicolumn{4}{l}{\textsuperscript{} $χ2=1.116 · df=1 · φ=0.127 · p=0.291$}\\
-#> \end{tabular}
+#> \end{tabular} 
 ```
 
 ## More Information
