@@ -1,6 +1,6 @@
 # sjtable2df NEWS
 
-## Unreleased (2022-09-02)
+## Unreleased (2022-12-02)
 
 #### Refactorings
 
@@ -18,6 +18,10 @@
 
 #### Other changes
 
+-   remove double significance information
+    ([78aaf33](https://github.com/kapsner/sjtable2df/tree/78aaf33817e8dcd8a8b477320b27e35fdf06fd76))
+-   updated news.md
+    ([e5b2ddf](https://github.com/kapsner/sjtable2df/tree/e5b2ddf8ecd7b42511ef3fbf90229a77fafc2ceb))
 -   merged development into main
     ([ce2227a](https://github.com/kapsner/sjtable2df/tree/ce2227a21bd3f3548916c773f775dc5ead776927))
 -   changelog now with autonewsmd
@@ -28,7 +32,7 @@
     ([fc1faf4](https://github.com/kapsner/sjtable2df/tree/fc1faf416482bed9ea39f595eedd894e5dddc0ed))
 
 Full set of changes:
-[`v0.0.2...ce2227a`](https://github.com/kapsner/sjtable2df/compare/v0.0.2...ce2227a)
+[`v0.0.2...78aaf33`](https://github.com/kapsner/sjtable2df/compare/v0.0.2...78aaf33)
 
 ## v0.0.2 (2022-06-20)
 
