@@ -28,9 +28,6 @@
 #' @return The table is returned as an R object of the type specified with
 #'   the `output` argument.
 #'
-#' @import data.table
-#' @importFrom magrittr "%>%"
-
 #' @examples
 #' \donttest{
 #' set.seed(1)
