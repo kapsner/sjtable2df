@@ -163,7 +163,7 @@ mtab2df <- function(mtab, n_models, output = "data.table", ...) {
   if (sum(first_col_dupl) > 0) {
     # if other values are an empty string
     if (sum(first_col_dupl) == ncol(stats_table) ||
-        identical(first_col_dupl, setNames(
+        identical(first_col_dupl, stats::setNames(
           object = as.logical(abs(empty_other_cols - 1)),
           nm = names(empty_other_cols)
         ))) {
