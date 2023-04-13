@@ -1,5 +1,12 @@
 # sjtable2df NEWS
 
+## Unreleased (2023-04-13)
+
+#### Other changes
+
+-   updated news.md to v0.0.3
+    ([3ad71ef](https://github.com/kapsner/sjtable2df/tree/3ad71ef2745eda99af6e1107b2d454245dc6bf60))
+
 ## v0.0.3 (2023-04-13)
 
 #### Bug fixes
