@@ -1,6 +1,6 @@
 # sjtable2df NEWS
 
-## Unreleased (2022-12-05)
+## Unreleased (2023-02-25)
 
 #### Bug fixes
 
@@ -16,6 +16,8 @@
 
 #### CI
 
+-   added dependency libgit2-dev to tic.yml
+    ([3c47e51](https://github.com/kapsner/sjtable2df/tree/3c47e51bbea5797317e74b8ead0409d4411493c0))
 -   devtools dependencies to tic.r
     ([9b75143](https://github.com/kapsner/sjtable2df/tree/9b75143c747a36bdb2f86c1c6c804319def85b5f))
 -   updated lint-stage
@@ -30,6 +32,8 @@
 
 #### Other changes
 
+-   fixed cran checks url
+    ([772587e](https://github.com/kapsner/sjtable2df/tree/772587ebc4bdd4c2644c8d49ab410d126255a0b9))
 -   merge main
     ([42f5f44](https://github.com/kapsner/sjtable2df/tree/42f5f44410c3158b9254521d07d3419caaebcfd9))
 -   remove double significance information
@@ -46,7 +50,7 @@
     ([fc1faf4](https://github.com/kapsner/sjtable2df/tree/fc1faf416482bed9ea39f595eedd894e5dddc0ed))
 
 Full set of changes:
-[`v0.0.2...6739616`](https://github.com/kapsner/sjtable2df/compare/v0.0.2...6739616)
+[`v0.0.2...3c47e51`](https://github.com/kapsner/sjtable2df/compare/v0.0.2...3c47e51)
 
 ## v0.0.2 (2022-06-20)
 

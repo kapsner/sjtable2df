@@ -15,7 +15,9 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 xtab_colnames <- function(tab) {
-  stopifnot(inherits(tab, "data.table"))
+  stopifnot(
+    "`tab` must be a `data.table`-object" = inherits(tab, "data.table")
+  )
 
   last_var_col <- ncol(tab) - 1
 

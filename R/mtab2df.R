@@ -70,15 +70,19 @@
 #' @export
 #'
 mtab2df <- function(mtab, n_models, output = "data.table", ...) {
-  stopifnot(inherits(mtab, "sjTable"))
-  stopifnot(is.integer(as.integer(n_models)))
+  stopifnot(
+    "`mtab` must be a `sjTable` object as produced \
+    by `sjPlot::tab_model`" = inherits(mtab, "sjTable"),
+    "`n_models` must be a integer" = is.integer(as.integer(n_models))
+  )
 
   # create statistics table
   stats_table <- get_html_table(tab = mtab)
 
   # test if all models have the same dependent variable
   stopifnot(
-    stats_table %>%
+    "All provided models must have the same dependent variable" =
+      stats_table %>%
       colnames() %>%
       .[2:ncol(stats_table)] %>%
       unique() %>%
