@@ -1,6 +1,6 @@
 # sjtable2df NEWS
 
-## Unreleased (2023-02-25)
+## Unreleased (2023-04-13)
 
 #### Bug fixes
 
@@ -32,6 +32,8 @@
 
 #### Other changes
 
+-   more informative error messages in stopifnot statements
+    ([08e5f3f](https://github.com/kapsner/sjtable2df/tree/08e5f3f298e1b5819c4544fd82480661f411b3d7))
 -   fixed cran checks url
     ([772587e](https://github.com/kapsner/sjtable2df/tree/772587ebc4bdd4c2644c8d49ab410d126255a0b9))
 -   merge main
@@ -50,7 +52,7 @@
     ([fc1faf4](https://github.com/kapsner/sjtable2df/tree/fc1faf416482bed9ea39f595eedd894e5dddc0ed))
 
 Full set of changes:
-[`v0.0.2...3c47e51`](https://github.com/kapsner/sjtable2df/compare/v0.0.2...3c47e51)
+[`v0.0.2...08e5f3f`](https://github.com/kapsner/sjtable2df/compare/v0.0.2...08e5f3f)
 
 ## v0.0.2 (2022-06-20)
 
