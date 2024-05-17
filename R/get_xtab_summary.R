@@ -16,7 +16,10 @@
 
 
 get_xtab_summary <- function(xtab) {
-  stopifnot(inherits(xtab, "sjtxtab"))
+  stopifnot(
+    "`xtab` must be a `sjxtab`-object as produced by \
+    `sjPlot::tab_xtab`" = inherits(xtab, "sjtxtab")
+  )
   xtab$page.content %>%
     rvest::minimal_html() %>%
     rvest::html_elements(css = ".summary") %>%

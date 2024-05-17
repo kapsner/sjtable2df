@@ -1,7 +1,7 @@
 
 # sjtable2df NEWS
 
-## Unreleased (2022-12-05)
+## Unreleased (2024-05-17)
 
 #### Bug fixes
 
@@ -17,6 +17,8 @@
 
 #### CI
 
+-   updated gha
+    ([3fe42b3](https://github.com/kapsner/sjtable2df/tree/3fe42b37a5579008af4981f841fc299a30674cfe))
 -   devtools dependencies to tic.r
     ([9b75143](https://github.com/kapsner/sjtable2df/tree/9b75143c747a36bdb2f86c1c6c804319def85b5f))
 -   updated lint-stage
@@ -47,7 +49,7 @@
     ([fc1faf4](https://github.com/kapsner/sjtable2df/tree/fc1faf416482bed9ea39f595eedd894e5dddc0ed))
 
 Full set of changes:
-[`v0.0.2...6739616`](https://github.com/kapsner/sjtable2df/compare/v0.0.2...6739616)
+[`v0.0.2...3fe42b3`](https://github.com/kapsner/sjtable2df/compare/v0.0.2...3fe42b3)
 
 ## v0.0.2 (2022-06-20)
 

@@ -2,7 +2,7 @@
 
 <!-- badges begin-->
 [![CRAN Status Badge](https://www.r-pkg.org/badges/version-ago/sjtable2df)](https://cran.r-project.org/package=sjtable2df)
-[![CRAN Checks](https://cranchecks.info/badges/worst/sjtable2df)](https://cran.r-project.org/web/checks/check_results_sjtable2df.html)
+[![CRAN Checks](https://badges.cranchecks.info/worst/sjtable2df.svg)](https://cran.r-project.org/web/checks/check_results_sjtable2df.html)
 [![](http://cranlogs.r-pkg.org/badges/grand-total/sjtable2df?color=blue)](https://cran.r-project.org/package=sjtable2df)
 [![](http://cranlogs.r-pkg.org/badges/last-month/sjtable2df?color=blue)](https://cran.r-project.org/package=sjtable2df)
 [![Dependencies](https://tinyverse.netlify.com/badge/sjtable2df)](https://cran.r-project.org/package=sjtable2df)
