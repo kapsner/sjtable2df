@@ -80,15 +80,19 @@ usethis::use_build_ignore("tic.R")
 usethis::use_build_ignore(".github")
 usethis::use_build_ignore("NEWS.md")
 usethis::use_build_ignore("README.md")
+usethis::use_build_ignore("README.qmd")
 usethis::use_build_ignore("docs")
 usethis::use_build_ignore("Meta")
 
 usethis::use_git_ignore("!NEWS.md")
 usethis::use_git_ignore("!README.md")
+usethis::use_git_ignore("!README.qmd")
 usethis::use_git_ignore("docs")
 usethis::use_git_ignore("Meta")
 
 usethis::use_tidy_description()
+
+quarto::quarto_render(input = "README.qmd")
 
 
 # https://github.com/gitpython-developers/GitPython/issues/1016#issuecomment-1104114129
@@ -103,12 +107,6 @@ usethis::use_tidy_description()
 #   command = 'auto-changelog -u -t "sjtable2df NEWS" --tag-prefix "v" -o "NEWS.md"'
 # )
 
-#badger::badge_cran_download("sjtable2df", "grand-total", "blue")
-#badger::badge_cran_download("sjtable2df", "last-month", "blue")
-#badger::badge_dependencies("sjtable2df")
-badger::badge_github_actions(action = "R CMD Check via {tic}")
-badger::badge_github_actions(action = "lint")
-badger::badge_github_actions(action = "test-coverage")
 
 # nolint end
 an <- autonewsmd::autonewsmd$new(repo_name = packagename)
