@@ -35,10 +35,19 @@ my_desc$set("BugReports",
             "https://github.com/kapsner/sjtable2df/issues")
 
 # Vignette Builder
-my_desc$set("VignetteBuilder" = "knitr")
+my_desc$set("VignetteBuilder" = "quarto")
+# Quarto
+my_desc$set("SystemRequirements" = paste0(
+  "Quarto command line tools ",
+  "(https://github.com/quarto-dev/quarto-cli).")
+)
 
-# License
-my_desc$set("License", "GPL-3")
+# Testthat stuff
+my_desc$set("Config/testthat/parallel" = "false")
+my_desc$set("Config/testthat/edition" = "3")
+# Roxygen
+my_desc$set("Roxygen" = "list(markdown = TRUE)")
+
 # Save everyting
 my_desc$write(file = "DESCRIPTION")
 
@@ -46,7 +55,7 @@ my_desc$write(file = "DESCRIPTION")
 usethis::use_gpl3_license()
 
 # Depends
-usethis::use_package("R", min_version = "2.10", type = "Depends")
+usethis::use_package("R", min_version = "3.6", type = "Depends")
 
 # Imports
 # https://cran.r-project.org/web/packages/data.table/vignettes/datatable-importing.html
@@ -61,8 +70,7 @@ usethis::use_package("stats", type = "Imports")
 # Suggests
 usethis::use_package("testthat", type = "Suggests", min_version = "3.0.1")
 usethis::use_package("lintr", type = "Suggests")
-usethis::use_package("knitr", type = "Suggests")
-usethis::use_package("rmarkdown", type = "Suggests")
+usethis::use_package("quarto", type = "Suggests")
 usethis::use_package("mlbench", type = "Suggests")
 usethis::use_package("sjPlot", type = "Suggests")
 usethis::use_package("lme4", type = "Suggests")
@@ -87,6 +95,7 @@ usethis::use_build_ignore("Meta")
 usethis::use_git_ignore("!NEWS.md")
 usethis::use_git_ignore("!README.md")
 usethis::use_git_ignore("!README.qmd")
+usethis::use_git_ignore("!vignettes/*.qmd")
 usethis::use_git_ignore("docs")
 usethis::use_git_ignore("Meta")
 

@@ -1,20 +1,16 @@
 ---
 title: "sjtable2df: Overview"
-output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{sjtable2df_overview}
   %\VignetteEncoding{UTF-8}
-  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEngine{quarto::html}
 editor_options: 
   chunk_output_type: console
+execute:
+  eval: true
+  collapse: true
+  comment: "#>"
 ---
-
-```{r, include = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>"
-)
-```
 
 The [`sjPlot`](https://CRAN.R-project.org/package=sjPlot) R package is a great package for visualizing results.
 

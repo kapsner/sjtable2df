@@ -51,3 +51,4 @@ docs
 Meta
 inst/doc
 !README.qmd
+!vignettes/*.qmd

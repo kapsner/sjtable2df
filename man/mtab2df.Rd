@@ -7,7 +7,7 @@
 mtab2df(mtab, n_models, output = "data.table", ...)
 }
 \arguments{
-\item{mtab}{A model table, created with `sjPlot::tab_model`.}
+\item{mtab}{A model table, created with \code{sjPlot::tab_model}.}
 
 \item{n_models}{An integer, specifiying the number of models in the table.}
 
@@ -15,15 +15,15 @@ mtab2df(mtab, n_models, output = "data.table", ...)
 "data.frame" or "kable". The function's return value is of the respective
 type.}
 
-\item{...}{Further arguments to be passed to `kableExtra::kbl`.}
+\item{...}{Further arguments to be passed to \code{kableExtra::kbl}.}
 }
 \value{
 The table is returned as an R object of the type specified with
-  the `output` argument.
+the \code{output} argument.
 }
 \description{
-Convert table from `sjPlot::tab_model` to R data.frame or
-  `knitr::kable`
+Convert table from \code{sjPlot::tab_model} to R data.frame or
+\code{knitr::kable}
 }
 \examples{
 \donttest{

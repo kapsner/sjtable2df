@@ -10,7 +10,7 @@ License: GPL (>= 3)
 URL: https://github.com/kapsner/sjtable2df
 BugReports: https://github.com/kapsner/sjtable2df/issues
 Depends: 
-    R (>= 2.10)
+    R (>= 3.6)
 Imports: 
     data.table,
     kableExtra,
@@ -20,14 +20,19 @@ Imports:
     stats,
     xml2
 Suggests: 
-    knitr,
     lintr,
     lme4,
     mlbench,
-    rmarkdown,
+    quarto,
     sjPlot,
     testthat (>= 3.0.1)
 VignetteBuilder: 
-    knitr
-Date/Publication: 2024-05-24 12:39:36.397009 UTC
+    quarto
+Config/testthat/edition: 3
+Config/testthat/parallel: false
+Date/Publication: 2024-06-07 07:04:09.870407 UTC
 Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+SystemRequirements: Quarto command line tools
+    (https://github.com/quarto-dev/quarto-cli).
+RoxygenNote: 7.3.1

@@ -7,7 +7,7 @@
 xtab2df(xtab, output = "data.table", threeparttable = FALSE, ...)
 }
 \arguments{
-\item{xtab}{A contingency table, created with `sjPlot::tab_xtab`.}
+\item{xtab}{A contingency table, created with \code{sjPlot::tab_xtab}.}
 
 \item{output}{A character vector. Allowed values are: "data.table" (default),
 "data.frame" or "kable". The function's return value is of the respective
@@ -17,15 +17,15 @@ type.}
 \href{https://www.ctan.org/pkg/threeparttable}{threeparttable} scheme should
 be used.}
 
-\item{...}{Further arguments to be passed to `kableExtra::kbl`.}
+\item{...}{Further arguments to be passed to \code{kableExtra::kbl}.}
 }
 \value{
 The table is returned as an R object of the type specified with
-  the `output` argument.
+the \code{output} argument.
 }
 \description{
-Convert table from `sjPlot::tab_xtab` to R data.frame or
-  `knitr::kable`
+Convert table from \code{sjPlot::tab_xtab} to R data.frame or
+\code{knitr::kable}
 }
 \examples{
 set.seed(1)
