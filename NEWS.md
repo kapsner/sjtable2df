@@ -2,7 +2,30 @@
 
 # sjtable2df NEWS
 
-## Unreleased (2024-05-24)
+## Unreleased (2024-06-07)
+
+#### CI
+
+-   updated gha
+    ([3fe42b3](https://github.com/kapsner/sjtable2df/tree/3fe42b37a5579008af4981f841fc299a30674cfe))
+
+#### Other changes
+
+-   transition to quarto as vignette engine
+    ([2872d3d](https://github.com/kapsner/sjtable2df/tree/2872d3db0e5af9ba81b64f8efe9fe414fba3a59d))
+-   moving to automated readme
+    ([e9470b0](https://github.com/kapsner/sjtable2df/tree/e9470b01f64e58dbe8a5ec39fc24be95a2dc2810))
+-   merged into development
+    ([7cca3a4](https://github.com/kapsner/sjtable2df/tree/7cca3a4940a5705cb7f39e79a29c372422bf5392))
+-   updated dev version
+    ([f78ab42](https://github.com/kapsner/sjtable2df/tree/f78ab4263ebb78043e947a1f120ddfaa56ba0a14))
+-   updated news.md to v0.0.3
+    ([3ad71ef](https://github.com/kapsner/sjtable2df/tree/3ad71ef2745eda99af6e1107b2d454245dc6bf60))
+
+Full set of changes:
+[`v0.0.3...2872d3d`](https://github.com/kapsner/sjtable2df/compare/v0.0.3...2872d3d)
+
+## v0.0.3 (2023-04-13)
 
 #### Bug fixes
 
@@ -18,8 +41,6 @@
 
 #### CI
 
--   updated gha
-    ([3fe42b3](https://github.com/kapsner/sjtable2df/tree/3fe42b37a5579008af4981f841fc299a30674cfe))
 -   added dependency libgit2-dev to tic.yml
     ([3c47e51](https://github.com/kapsner/sjtable2df/tree/3c47e51bbea5797317e74b8ead0409d4411493c0))
 -   devtools dependencies to tic.r
@@ -36,14 +57,6 @@
 
 #### Other changes
 
--   moving to automated readme
-    ([e9470b0](https://github.com/kapsner/sjtable2df/tree/e9470b01f64e58dbe8a5ec39fc24be95a2dc2810))
--   merged into development
-    ([7cca3a4](https://github.com/kapsner/sjtable2df/tree/7cca3a4940a5705cb7f39e79a29c372422bf5392))
--   updated dev version
-    ([f78ab42](https://github.com/kapsner/sjtable2df/tree/f78ab4263ebb78043e947a1f120ddfaa56ba0a14))
--   updated news.md to v0.0.3
-    ([3ad71ef](https://github.com/kapsner/sjtable2df/tree/3ad71ef2745eda99af6e1107b2d454245dc6bf60))
 -   updated metadata and news.md
     ([612032b](https://github.com/kapsner/sjtable2df/tree/612032b549d147f765251ff11086f87344529462))
 -   more informative error messages in stopifnot statements
@@ -66,7 +79,7 @@
     ([fc1faf4](https://github.com/kapsner/sjtable2df/tree/fc1faf416482bed9ea39f595eedd894e5dddc0ed))
 
 Full set of changes:
-[`v0.0.2...e9470b0`](https://github.com/kapsner/sjtable2df/compare/v0.0.2...e9470b0)
+[`v0.0.2...v0.0.3`](https://github.com/kapsner/sjtable2df/compare/v0.0.2...v0.0.3)
 
 ## v0.0.2 (2022-06-20)
 

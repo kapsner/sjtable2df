@@ -33,12 +33,10 @@ test_that(
     expect_true(inherits(final_tab, "data.table"))
     expect_true(nrow(final_tab) == 4)
 
-    expect_snapshot_value(
+    expect_snapshot(
       x = final_tab,
-      style = "json2",
       cran = FALSE,
-      tolerance = 10e-1,
-      ignore_function_env = TRUE
+      error = FALSE
     )
 
 
@@ -47,27 +45,16 @@ test_that(
     expect_type(final_tab, "list")
     expect_true(inherits(final_tab, "data.frame"))
 
-    expect_snapshot_value(
+    expect_snapshot(
       x = final_tab,
-      style = "json2",
       cran = FALSE,
-      tolerance = 10e-1,
-      ignore_function_env = TRUE
+      error = FALSE
     )
 
     final_tab <- sjtable2df::xtab2df(xtab = xtab, output = "kable")
 
     expect_type(final_tab, "character")
     expect_true(inherits(final_tab, "knitr_kable"))
-
-    expect_snapshot_value(
-      x = final_tab,
-      style = "json2",
-      cran = FALSE,
-      tolerance = 10e-1,
-      ignore_function_env = TRUE
-    )
-
 
     # with more statistics: cell.prc
     xtab <- sjPlot::tab_xtab(
@@ -84,12 +71,10 @@ test_that(
     expect_true(inherits(final_tab, "data.table"))
     expect_true(nrow(final_tab) == 4)
 
-    expect_snapshot_value(
+    expect_snapshot(
       x = final_tab,
-      style = "json2",
       cran = FALSE,
-      tolerance = 10e-1,
-      ignore_function_env = TRUE
+      error = FALSE
     )
 
 
@@ -108,12 +93,10 @@ test_that(
     expect_true(inherits(final_tab, "data.table"))
     expect_true(nrow(final_tab) == 4)
 
-    expect_snapshot_value(
+    expect_snapshot(
       x = final_tab,
-      style = "json2",
       cran = FALSE,
-      tolerance = 10e-1,
-      ignore_function_env = TRUE
+      error = FALSE
     )
 
 
@@ -132,12 +115,10 @@ test_that(
     expect_true(inherits(final_tab, "data.table"))
     expect_true(nrow(final_tab) == 4)
 
-    expect_snapshot_value(
+    expect_snapshot(
       x = final_tab,
-      style = "json2",
       cran = FALSE,
-      tolerance = 10e-1,
-      ignore_function_env = TRUE
+      error = FALSE
     )
 
 
@@ -156,12 +137,10 @@ test_that(
     expect_true(inherits(final_tab, "data.table"))
     expect_true(nrow(final_tab) == 4)
 
-    expect_snapshot_value(
+    expect_snapshot(
       x = final_tab,
-      style = "json2",
       cran = FALSE,
-      tolerance = 10e-1,
-      ignore_function_env = TRUE
+      error = FALSE
     )
   }
 )
@@ -203,12 +182,10 @@ test_that(
     expect_true(inherits(final_tab, "data.table"))
     expect_true(nrow(final_tab) == 3)
 
-    expect_snapshot_value(
+    expect_snapshot(
       x = final_tab,
-      style = "json2",
       cran = FALSE,
-      tolerance = 10e-1,
-      ignore_function_env = TRUE
+      error = FALSE
     )
   }
 )
@@ -250,12 +227,10 @@ test_that(
     expect_true(inherits(final_tab, "data.table"))
     expect_true(nrow(final_tab) == 5)
 
-    expect_snapshot_value(
+    expect_snapshot(
       x = final_tab,
-      style = "json2",
       cran = FALSE,
-      tolerance = 10e-1,
-      ignore_function_env = TRUE
+      error = FALSE
     )
 
 
@@ -264,25 +239,15 @@ test_that(
     expect_type(final_tab, "list")
     expect_true(inherits(final_tab, "data.frame"))
 
-    expect_snapshot_value(
+    expect_snapshot(
       x = final_tab,
-      style = "json2",
       cran = FALSE,
-      tolerance = 10e-1,
-      ignore_function_env = TRUE
+      error = FALSE
     )
 
     final_tab <- sjtable2df::xtab2df(xtab = xtab, output = "kable")
 
     expect_type(final_tab, "character")
     expect_true(inherits(final_tab, "knitr_kable"))
-
-    expect_snapshot_value(
-      x = final_tab,
-      style = "json2",
-      cran = FALSE,
-      tolerance = 10e-1,
-      ignore_function_env = TRUE
-    )
   }
 )

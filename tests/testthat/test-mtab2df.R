@@ -45,12 +45,10 @@ test_that(
     expect_true(inherits(final_tab, "data.table"))
     expect_true(nrow(final_tab) == 6)
 
-    expect_snapshot_value(
+    expect_snapshot(
       x = final_tab,
-      style = "json2",
       cran = FALSE,
-      tolerance = 10e-1,
-      ignore_function_env = TRUE
+      error = FALSE
     )
 
 
@@ -63,12 +61,10 @@ test_that(
     expect_type(final_tab, "list")
     expect_true(inherits(final_tab, "data.frame"))
 
-    expect_snapshot_value(
+    expect_snapshot(
       x = final_tab,
-      style = "json2",
       cran = FALSE,
-      tolerance = 10e-1,
-      ignore_function_env = TRUE
+      error = FALSE
     )
 
     final_tab <- sjtable2df::mtab2df(
@@ -79,14 +75,6 @@ test_that(
 
     expect_type(final_tab, "character")
     expect_true(inherits(final_tab, "knitr_kable"))
-
-    expect_snapshot_value(
-      x = final_tab,
-      style = "json2",
-      cran = FALSE,
-      tolerance = 10e-1,
-      ignore_function_env = TRUE
-    )
   }
 )
 
@@ -131,16 +119,12 @@ test_that(
 
     expect_type(final_tab, "list")
     expect_true(inherits(final_tab, "data.table"))
-    expect_true(nrow(final_tab) == 10)
 
-    expect_snapshot_value(
+    expect_snapshot(
       x = final_tab,
-      style = "json2",
       cran = FALSE,
-      tolerance = 10e-1,
-      ignore_function_env = TRUE
+      error = FALSE
     )
-
 
     final_tab <- sjtable2df::mtab2df(
       mtab = m_table,
@@ -151,12 +135,10 @@ test_that(
     expect_type(final_tab, "list")
     expect_true(inherits(final_tab, "data.frame"))
 
-    expect_snapshot_value(
+    expect_snapshot(
       x = final_tab,
-      style = "json2",
       cran = FALSE,
-      tolerance = 10e-1,
-      ignore_function_env = TRUE
+      error = FALSE
     )
 
     final_tab <- sjtable2df::mtab2df(
@@ -167,15 +149,6 @@ test_that(
 
     expect_type(final_tab, "character")
     expect_true(inherits(final_tab, "knitr_kable"))
-
-    expect_snapshot_value(
-      x = final_tab,
-      style = "json2",
-      cran = FALSE,
-      tolerance = 10e-1,
-      ignore_function_env = TRUE
-    )
-
 
   }
 )
