@@ -21,7 +21,7 @@ jobs:
           # use a different tic template type if you do not want to build on all listed platforms
           #- { os: windows-latest, r: "release", java: "true" }
           #- { os: macOS-latest, r: "release", java: "true" }
-          - { os: ubuntu-latest, r: "release", java: "false" }
+          - { os: ubuntu-latest, r: "release", java: "true" }
 
     env:
       # otherwise remotes::fun() errors cause the build to fail. Example: Unavailability of binaries
@@ -81,7 +81,7 @@ jobs:
 
       - name: "[Cache] Restore R package cache"
         if: runner.os != 'Windows'
-        uses: actions/cache/restore@v3
+        uses: actions/cache/restore@v4
         with:
           path: ${{ env.R_LIBS_USER }}
           key: ${{ runner.os }}-r-${{ matrix.config.r }}-${{steps.date.outputs.date}}
