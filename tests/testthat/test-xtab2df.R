@@ -3,6 +3,7 @@ test_that(
   code = {
 
     local_edition(3)
+    local_reproducible_output(rstudio = TRUE)
 
     set.seed(1)
     dataset <- data.table::data.table(
@@ -152,6 +153,7 @@ test_that(
   code = {
 
     local_edition(3)
+    local_reproducible_output(rstudio = TRUE)
 
     set.seed(1)
     dataset <- data.table::data.table(
@@ -197,6 +199,7 @@ test_that(
   code = {
 
     local_edition(3)
+    local_reproducible_output(rstudio = TRUE)
 
     set.seed(1)
     dataset <- data.table::data.table(

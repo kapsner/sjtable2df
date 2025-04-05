@@ -2,7 +2,12 @@
 
 # sjtable2df NEWS
 
-## Unreleased (2024-06-07)
+## v0.0.4 (2025-04-04)
+
+#### Bug fixes
+
+-   fixing cran issue related to using testthat::expect_snapshot_value
+    ([86733f8](https://github.com/kapsner/sjtable2df/tree/86733f8791adcf136de8f64b3b29c22762661fd7))
 
 #### CI
 
@@ -23,7 +28,7 @@
     ([3ad71ef](https://github.com/kapsner/sjtable2df/tree/3ad71ef2745eda99af6e1107b2d454245dc6bf60))
 
 Full set of changes:
-[`v0.0.3...2872d3d`](https://github.com/kapsner/sjtable2df/compare/v0.0.3...2872d3d)
+[`v0.0.3...v0.0.4`](https://github.com/kapsner/sjtable2df/compare/v0.0.3...v0.0.4)
 
 ## v0.0.3 (2023-04-13)
 
