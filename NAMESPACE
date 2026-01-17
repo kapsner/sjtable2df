@@ -3,4 +3,3 @@
 export(mtab2df)
 export(xtab2df)
 import(data.table)
-importFrom(magrittr,"%>%")

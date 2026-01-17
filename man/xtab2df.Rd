@@ -28,28 +28,30 @@ Convert table from \code{sjPlot::tab_xtab} to R data.frame or
 \code{knitr::kable}
 }
 \examples{
-set.seed(1)
-dataset <- data.table::data.table(
-  "var1" = sample(
-    x = c("yes", "no"),
-    size = 100,
-    replace = TRUE,
-    prob = c(.3, .7)
-  ),
-  "var2" = sample(
-    x = c("yes", "no"),
-    size = 100,
-    replace = TRUE
+if (requireNamespace("sjPlot", quietly = TRUE)) {
+  set.seed(1)
+  dataset <- data.table::data.table(
+    "var1" = sample(
+      x = c("yes", "no"),
+      size = 100,
+      replace = TRUE,
+      prob = c(.3, .7)
+    ),
+    "var2" = sample(
+      x = c("yes", "no"),
+      size = 100,
+      replace = TRUE
+    )
   )
-)
 
-xtab <- sjPlot::tab_xtab(
-  var.row = dataset$var1,
-  var.col = dataset$var2,
-  show.summary = TRUE,
-  use.viewer = FALSE
-)
+  xtab <- sjPlot::tab_xtab(
+    var.row = dataset$var1,
+    var.col = dataset$var2,
+    show.summary = TRUE,
+    use.viewer = FALSE
+  )
 
-sjtable2df::xtab2df(xtab = xtab)
+  sjtable2df::xtab2df(xtab = xtab)
+}
 
 }

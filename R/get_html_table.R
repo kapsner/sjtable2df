@@ -15,28 +15,27 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 get_html_table_elements <- function(tab) {
-  tab$page.content %>%
-    rvest::read_html() %>%
-    rvest::html_element(css = "table") %>%
-    return()
+  ret <- tab$page.content |>
+    rvest::read_html() |>
+    rvest::html_element(css = "table")
+  return(ret)
 }
 
 parse_html_table <- function(tab_content) {
-  tab_content %>%
-    rvest::html_table() %>%
-    data.table::data.table() %>%
-    return()
+  ret <- tab_content |>
+    rvest::html_table() |>
+    data.table::data.table()
+  return(ret)
 }
 
 get_html_table <- function(tab) {
-  tab %>%
-    get_html_table_elements() %>%
-    parse_html_table() %>%
-    return()
+  ret <- tab |>
+    get_html_table_elements() |>
+    parse_html_table()
+  return(ret)
 }
 
 get_xtab_html_table <- function(tab) {
-
   tab_content <- get_html_table_elements(tab)
   out_tab <- parse_html_table(tab_content)
 
@@ -66,29 +65,28 @@ get_xtab_html_table <- function(tab) {
       )
 
       if (length(cell_addons) == 0) {
-        rvest::html_text(cell_values) %>%
-          return()
+        return(rvest::html_text(cell_values))
       } else {
-        paste0(
+        ret <- paste0(
           rvest::html_text(cell_values),
           paste0(
             " (",
             rvest::html_text(cell_addons),
             ")"
           )
-        ) %>%
-          return()
+        )
+        return(ret)
       }
     }
-  ) %>%
-    data.table::as.data.table() %>%
+  ) |>
+    data.table::as.data.table() |>
     data.table::transpose()
 
   colnames(replacement_rows) <- colnames(out_tab)[2:tab_ncol]
 
-  cbind(
+  ret <- cbind(
     out_tab[, 1],
     replacement_rows
-  ) %>%
-    return()
+  )
+  return(ret)
 }

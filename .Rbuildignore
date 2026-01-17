@@ -13,3 +13,4 @@
 ^docs$
 ^CRAN-SUBMISSION$
 ^README\.qmd$
+^\.pre-commit-config\.yaml$

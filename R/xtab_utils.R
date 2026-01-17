@@ -22,9 +22,11 @@ xtab_colnames <- function(tab) {
   last_var_col <- ncol(tab) - 1
 
   # add levels to colnames of 'cardio variable'
-  colnames(tab)[2:last_var_col] <-
-    tab[1, c(2:last_var_col), with = FALSE] %>%
-    as.character() %>%
-    paste(colnames(tab)[2], .)
+  cnames <- tab[1, c(2:last_var_col), with = FALSE] |>
+    as.character()
+  colnames(tab)[2:last_var_col] <- paste(
+    colnames(tab)[2],
+    cnames
+  )
   return(tab[-1, ])
 }

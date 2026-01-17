@@ -17,8 +17,7 @@ status](https://github.com/kapsner/sjtable2df/workflows/R%20CMD%20Check%20via%20
 status](https://github.com/kapsner/sjtable2df/workflows/lint/badge.svg)](https://github.com/kapsner/sjtable2df/actions)
 [![R build
 status](https://github.com/kapsner/sjtable2df/workflows/test-coverage/badge.svg)](https://github.com/kapsner/sjtable2df/actions)
-[![](https://codecov.io/gh/https://github.com/kapsner/sjtable2df/branch/main/graph/badge.svg)](https://codecov.io/gh/https://github.com/kapsner/sjtable2df)
-
+[![](https://codecov.io/gh/https://github.com/kapsner/sjtable2df/branch/main/graph/badge.svg)](https://app.codecov.io/gh/https://github.com/kapsner/sjtable2df)
 <!-- badges: end -->
 
 The [`sjPlot`](https://CRAN.R-project.org/package=sjPlot) R package is a
@@ -104,7 +103,7 @@ sjtable2df::xtab2df(xtab = xtab, output = "kable", format = "latex")
 #> Total & 47 & 53 & 100\\
 #> \hline
 #> \multicolumn{4}{l}{\textsuperscript{} $χ2=1.116 · df=1 · φ=0.127 · p=0.291$}\\
-#> \end{tabular} 
+#> \end{tabular}
 ```
 
 ## More Information

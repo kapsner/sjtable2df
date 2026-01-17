@@ -4,7 +4,7 @@ vignette: >
   %\VignetteIndexEntry{sjtable2df_overview}
   %\VignetteEncoding{UTF-8}
   %\VignetteEngine{quarto::html}
-editor_options: 
+editor_options:
   chunk_output_type: console
 execute:
   eval: true
@@ -16,14 +16,14 @@ The [`sjPlot`](https://CRAN.R-project.org/package=sjPlot) R package is a great p
 
 However, the tables created using the functions [`sjPlot::tab_model`](https://www.rdocumentation.org/packages/sjPlot/versions/2.8.4/topics/tab_model) or [`sjPlot::tab_xtab`](https://www.rdocumentation.org/packages/sjPlot/versions/2.8.4/topics/tab_xtab) return HTML tables and are not straightforward to use in R, especially when trying to integrate them into pdf- or word-documents using Rmarkdown.
 
-Various approaches/ tutorials exist to convert `sjPlot` HTML tables to R `data.frame` objects: 
+Various approaches/ tutorials exist to convert `sjPlot` HTML tables to R `data.frame` objects:
 
 * https://stackoverflow.com/questions/63053465/how-to-convert-an-html-sjtable-from-the-sjplot-package-to-latex
 * https://stackoverflow.com/questions/47744396/how-to-format-an-sjplot-in-pdf-rmarkdown
 * https://stackoverflow.com/questions/62197268/knitting-output-from-sjplottab-model-or-other-html-tables-into-pdf-document
 * https://stackoverflow.com/questions/65274404/how-to-extract-lme4-output-to-latex-tables
 
-None of these approaches converts `sjPlot` HTML tables to R `data.frame` objects or integrates well with `knitr::kable` or the [`kableExtra`](https://CRAN.R-project.org/package=kableExtra) R package. 
+None of these approaches converts `sjPlot` HTML tables to R `data.frame` objects or integrates well with `knitr::kable` or the [`kableExtra`](https://CRAN.R-project.org/package=kableExtra) R package.
 
 The `sjtable2df` R package's goal is to overcome this and to provide an easy interface for converting `sjPlot`'s HTML tables to `data.frame`, `data.table`, or `kable` objects for further usage in R or Rmarkdown.
 
@@ -35,17 +35,15 @@ Currently, `sjtable2df` provides two functions to convert tables created from `s
 
 ```{r setup}
 library(sjtable2df)
-
 library(mlbench)
-library(magrittr)
 
 # load data
 data("PimaIndiansDiabetes2")
-dataset <- PimaIndiansDiabetes2 %>%
+dataset <- PimaIndiansDiabetes2 |>
   data.table::as.data.table()
 
 # create new binary variable
-dataset[, ("preg_gt_4") := ifelse(get("pregnant") > 4, 1, 0) %>% factor()]
+dataset[, ("preg_gt_4") := ifelse(get("pregnant") > 4, 1, 0) |> factor()]
 ```
 
 ## Create Contingency Table
@@ -81,7 +79,7 @@ xtab_kbl <- sjtable2df::xtab2df(
   col.names = c("Diabetes", "No", "Yes", "Total")
 )
 class(xtab_kbl)
-xtab_kbl %>%
+xtab_kbl |>
   kableExtra::add_header_above(
     header = c(" " = 1, "Pregnant > 4" = 2, " " = 1)
   )
@@ -135,7 +133,9 @@ m2 <- lm(
 
 ```{r}
 m_table <- sjPlot::tab_model(
-  m0, m1, m2,
+  m0,
+  m1,
+  m2,
   show.aic = TRUE
 )
 ```
@@ -196,7 +196,9 @@ m2 <- stats::glm(
 
 ```{r}
 m_table <- sjPlot::tab_model(
-  m0, m1, m2,
+  m0,
+  m1,
+  m2,
   show.aic = TRUE
 )
 ```
@@ -264,7 +266,9 @@ m2 <- lme4::glmer(
 
 ```{r}
 m_table <- sjPlot::tab_model(
-  m0, m1, m2,
+  m0,
+  m1,
+  m2,
   show.aic = TRUE
 )
 ```

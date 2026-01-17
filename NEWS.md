@@ -2,6 +2,23 @@
 
 # sjtable2df NEWS
 
+## Unreleased (2026-01-17)
+
+#### CI
+
+-   updated gha
+    ([8f28a7c](https://github.com/kapsner/sjtable2df/tree/8f28a7c5389d27b3e674b83438f7e021468b4404))
+
+#### Other changes
+
+-   added pre-commit hooks
+    ([2603e74](https://github.com/kapsner/sjtable2df/tree/2603e74d9a968530447348771eb55e31ba319d6e))
+-   updated dev-version
+    ([4200d82](https://github.com/kapsner/sjtable2df/tree/4200d821d814687cb96ad3e83824ab279bc34996))
+
+Full set of changes:
+[`v0.0.4...2603e74`](https://github.com/kapsner/sjtable2df/compare/v0.0.4...2603e74)
+
 ## v0.0.4 (2025-04-04)
 
 #### Bug fixes

@@ -14,15 +14,14 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-
 get_xtab_summary <- function(xtab) {
   stopifnot(
     "`xtab` must be a `sjxtab`-object as produced by \
     `sjPlot::tab_xtab`" = inherits(xtab, "sjtxtab")
   )
-  xtab$page.content %>%
-    rvest::minimal_html() %>%
-    rvest::html_elements(css = ".summary") %>%
-    rvest::html_text() %>%
-    return()
+  ret <- xtab$page.content |>
+    rvest::minimal_html() |>
+    rvest::html_elements(css = ".summary") |>
+    rvest::html_text()
+  return(ret)
 }

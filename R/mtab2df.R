@@ -30,43 +30,45 @@
 #'
 #' @examples
 #' \donttest{
-#' set.seed(1)
-#' dataset <- data.table::data.table(
-#'   "var1" = factor(sample(
-#'     x = c("yes", "no"),
-#'     size = 100,
-#'     replace = TRUE,
-#'     prob = c(.3, .7)
-#'   )),
-#'   "var2" = factor(sample(
-#'     x = c("yes", "no"),
-#'     size = 100,
-#'     replace = TRUE
-#'   )),
-#'   "var3" = rnorm(100)
-#' )
+#' if (requireNamespace("sjPlot", quietly = TRUE)) {
+#'   set.seed(1)
+#'   dataset <- data.table::data.table(
+#'     "var1" = factor(sample(
+#'       x = c("yes", "no"),
+#'       size = 100,
+#'       replace = TRUE,
+#'       prob = c(.3, .7)
+#'     )),
+#'     "var2" = factor(sample(
+#'       x = c("yes", "no"),
+#'       size = 100,
+#'       replace = TRUE
+#'     )),
+#'     "var3" = rnorm(100)
+#'   )
 #'
-#' # models
-#' m0 <- stats::glm(
-#'   var1 ~ 1,
-#'   data = dataset,
-#'   family = binomial(link = "logit")
-#' )
-#' m1 <- stats::glm(
-#'   var1 ~ var2,
-#'   data = dataset,
-#'   family = binomial(link = "logit")
-#' )
-#' m2 <- stats::glm(
-#'   var1 ~ var2 + var3,
-#'   data = dataset,
-#'   family = binomial(link = "logit")
-#' )
+#'   # models
+#'   m0 <- stats::glm(
+#'     var1 ~ 1,
+#'     data = dataset,
+#'     family = binomial(link = "logit")
+#'   )
+#'   m1 <- stats::glm(
+#'     var1 ~ var2,
+#'     data = dataset,
+#'     family = binomial(link = "logit")
+#'   )
+#'   m2 <- stats::glm(
+#'     var1 ~ var2 + var3,
+#'     data = dataset,
+#'     family = binomial(link = "logit")
+#'   )
 #'
-#' m_table <- sjPlot::tab_model(m0, m1, m2, show.aic = TRUE)
+#'   m_table <- sjPlot::tab_model(m0, m1, m2, show.aic = TRUE)
 #'
-#' final_tab <- sjtable2df::mtab2df(mtab = m_table, n_models = 3)
-#' }
+#'   final_tab <- sjtable2df::mtab2df(mtab = m_table, n_models = 3)
+#'
+#' }}
 #' @export
 #'
 mtab2df <- function(mtab, n_models, output = "data.table", ...) {
@@ -81,18 +83,16 @@ mtab2df <- function(mtab, n_models, output = "data.table", ...) {
 
   # test if all models have the same dependent variable
   stopifnot(
-    "All provided models must have the same dependent variable" =
-      stats_table %>%
-      colnames() %>%
-      .[2:ncol(stats_table)] %>%
-      unique() %>%
-      length() == 1
+    "All provided models must have the same dependent variable" = length(
+      unique(colnames(stats_table)[2:ncol(stats_table)])
+    ) ==
+      1
   )
 
   # headline for kable
   kbl_headline <- colnames(stats_table)[2]
 
-  colnames(stats_table) <- stats_table[1, ] %>% as.character()
+  colnames(stats_table) <- stats_table[1, ] |> as.character()
   stats_table <- stats_table[-1, ]
 
   # get columns to suppress
@@ -104,10 +104,11 @@ mtab2df <- function(mtab, n_models, output = "data.table", ...) {
       end_col <- start_col + 1
       return(c(start_col, end_col))
     }
-  ) %>% unlist()
+  ) |>
+    unlist()
 
   # get rows to suppress
-  values_col_one <- stats_table[, 1] %>% unlist()
+  values_col_one <- stats_table[, 1] |> unlist()
   if ("Random Effects" %in% values_col_one) {
     suppress_term <- "Random Effects"
     # remove multiple occurence of "Random Effects"
@@ -124,9 +125,11 @@ mtab2df <- function(mtab, n_models, output = "data.table", ...) {
       l = list(
         stats_table[1:(which(stats_table[, 1] == suppress_term) - 1), ],
         append_row,
-        stats_table[(which(stats_table[, 1] == suppress_term) + 1):nrow(
-          stats_table
-        ), ]
+        stats_table[
+          (which(stats_table[, 1] == suppress_term) + 1):nrow(
+            stats_table
+          ),
+        ]
       )
     )
   } else if ("Observations" %in% values_col_one) {
@@ -134,7 +137,8 @@ mtab2df <- function(mtab, n_models, output = "data.table", ...) {
   }
 
   suppress_rows <- which(
-    stats_table[, 1] == suppress_term):nrow(stats_table)
+    stats_table[, 1] == suppress_term
+  ):nrow(stats_table)
 
   # suppress info
   for (colnum in suppress_cols) {
@@ -163,11 +167,16 @@ mtab2df <- function(mtab, n_models, output = "data.table", ...) {
 
   if (sum(first_col_dupl) > 0) {
     # if other values are an empty string
-    if (sum(first_col_dupl) == ncol(stats_table) ||
-        identical(first_col_dupl, stats::setNames(
-          object = as.logical(abs(empty_other_cols - 1)),
-          nm = names(empty_other_cols)
-        ))) {
+    if (
+      sum(first_col_dupl) == ncol(stats_table) ||
+        identical(
+          first_col_dupl,
+          stats::setNames(
+            object = as.logical(abs(empty_other_cols - 1)),
+            nm = names(empty_other_cols)
+          )
+        )
+    ) {
       # replace with empty string
       # keep significance level information only in the first column:
       stats_table[nrow(stats_table), 2:ncol(stats_table) := ""]
@@ -176,23 +185,24 @@ mtab2df <- function(mtab, n_models, output = "data.table", ...) {
 
   # data.table output
   if (output %in% c("data.table", "data.frame")) {
-
     if (output == "data.frame") {
-      stats_table %>%
-        as.data.frame() %>%
-        return()
+      ret <- stats_table |>
+        as.data.frame()
+      return(ret)
     } else {
       return(stats_table)
     }
   } else if (output == "kable") {
     # utf8 replacements for kable
     first_col <- colnames(stats_table)[1]
-    stats_table[, (first_col) := utf_replacements(
-      vec = get(first_col),
-      kable_mtab = TRUE
-    )]
+    stats_table[,
+      (first_col) := utf_replacements(
+        vec = get(first_col),
+        kable_mtab = TRUE
+      )
+    ]
 
-    final_table <- stats_table %>%
+    final_table <- stats_table |>
       kableExtra::kbl(...)
 
     kbl_header <- c(
@@ -201,10 +211,10 @@ mtab2df <- function(mtab, n_models, output = "data.table", ...) {
     )
     names(kbl_header) <- c(" ", kbl_headline)
 
-    final_table %>%
+    ret <- final_table |>
       kableExtra::add_header_above(
         header = kbl_header
-      ) %>%
-      return()
+      )
+    return(ret)
   }
 }

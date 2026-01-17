@@ -33,29 +33,31 @@
 #' @inheritParams kableExtra::add_footnote
 #'
 #' @examples
-#' set.seed(1)
-#' dataset <- data.table::data.table(
-#'   "var1" = sample(
-#'     x = c("yes", "no"),
-#'     size = 100,
-#'     replace = TRUE,
-#'     prob = c(.3, .7)
-#'   ),
-#'   "var2" = sample(
-#'     x = c("yes", "no"),
-#'     size = 100,
-#'     replace = TRUE
+#' if (requireNamespace("sjPlot", quietly = TRUE)) {
+#'   set.seed(1)
+#'   dataset <- data.table::data.table(
+#'     "var1" = sample(
+#'       x = c("yes", "no"),
+#'       size = 100,
+#'       replace = TRUE,
+#'       prob = c(.3, .7)
+#'     ),
+#'     "var2" = sample(
+#'       x = c("yes", "no"),
+#'       size = 100,
+#'       replace = TRUE
+#'     )
 #'   )
-#' )
 #'
-#' xtab <- sjPlot::tab_xtab(
-#'   var.row = dataset$var1,
-#'   var.col = dataset$var2,
-#'   show.summary = TRUE,
-#'   use.viewer = FALSE
-#' )
+#'   xtab <- sjPlot::tab_xtab(
+#'     var.row = dataset$var1,
+#'     var.col = dataset$var2,
+#'     show.summary = TRUE,
+#'     use.viewer = FALSE
+#'   )
 #'
-#' sjtable2df::xtab2df(xtab = xtab)
+#'   sjtable2df::xtab2df(xtab = xtab)
+#' }
 #'
 #' @export
 #'
@@ -63,11 +65,11 @@ xtab2df <- function(
   xtab,
   output = "data.table",
   threeparttable = FALSE,
-  ...) {
+  ...
+) {
   stopifnot(
     "`xtab` must be a `sjxtab`-object as produced by \
-    `sjPlot::tab_xtab`" =
-      inherits(xtab, "sjtxtab")
+    `sjPlot::tab_xtab`" = inherits(xtab, "sjtxtab")
   )
 
   # create statistics table
@@ -96,25 +98,25 @@ xtab2df <- function(
       final_table <- stats_table
     }
     if (output == "data.frame") {
-      final_table %>%
-        as.data.frame() %>%
-        return()
+      ret <- final_table |>
+        as.data.frame()
+      return(ret)
     } else {
       return(final_table)
     }
   } else if (output == "kable") {
-    final_table <- stats_table %>%
+    final_table <- stats_table |>
       kableExtra::kbl(...)
 
     if (length(stats_summary) == 1) {
-      final_table %>%
+      ret <- final_table |>
         kableExtra::add_footnote(
           label = paste0("$", stats_summary, "$"),
           notation = "none",
           threeparttable = threeparttable,
           escape = FALSE
-        ) %>%
-        return()
+        )
+      return(ret)
     } else {
       return(final_table)
     }

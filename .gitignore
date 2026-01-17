@@ -52,3 +52,4 @@ Meta
 inst/doc
 !README.qmd
 !vignettes/*.qmd
+!.pre-commit-config.yaml

@@ -27,41 +27,43 @@ Convert table from \code{sjPlot::tab_model} to R data.frame or
 }
 \examples{
 \donttest{
-set.seed(1)
-dataset <- data.table::data.table(
-  "var1" = factor(sample(
-    x = c("yes", "no"),
-    size = 100,
-    replace = TRUE,
-    prob = c(.3, .7)
-  )),
-  "var2" = factor(sample(
-    x = c("yes", "no"),
-    size = 100,
-    replace = TRUE
-  )),
-  "var3" = rnorm(100)
-)
+if (requireNamespace("sjPlot", quietly = TRUE)) {
+  set.seed(1)
+  dataset <- data.table::data.table(
+    "var1" = factor(sample(
+      x = c("yes", "no"),
+      size = 100,
+      replace = TRUE,
+      prob = c(.3, .7)
+    )),
+    "var2" = factor(sample(
+      x = c("yes", "no"),
+      size = 100,
+      replace = TRUE
+    )),
+    "var3" = rnorm(100)
+  )
 
-# models
-m0 <- stats::glm(
-  var1 ~ 1,
-  data = dataset,
-  family = binomial(link = "logit")
-)
-m1 <- stats::glm(
-  var1 ~ var2,
-  data = dataset,
-  family = binomial(link = "logit")
-)
-m2 <- stats::glm(
-  var1 ~ var2 + var3,
-  data = dataset,
-  family = binomial(link = "logit")
-)
+  # models
+  m0 <- stats::glm(
+    var1 ~ 1,
+    data = dataset,
+    family = binomial(link = "logit")
+  )
+  m1 <- stats::glm(
+    var1 ~ var2,
+    data = dataset,
+    family = binomial(link = "logit")
+  )
+  m2 <- stats::glm(
+    var1 ~ var2 + var3,
+    data = dataset,
+    family = binomial(link = "logit")
+  )
 
-m_table <- sjPlot::tab_model(m0, m1, m2, show.aic = TRUE)
+  m_table <- sjPlot::tab_model(m0, m1, m2, show.aic = TRUE)
 
-final_tab <- sjtable2df::mtab2df(mtab = m_table, n_models = 3)
-}
+  final_tab <- sjtable2df::mtab2df(mtab = m_table, n_models = 3)
+
+}}
 }
