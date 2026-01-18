@@ -1,6 +1,6 @@
 Package: sjtable2df
 Title: Convert 'sjPlot' HTML-Tables to R 'data.frame'
-Version: 0.0.4.9002
+Version: 0.0.5
 Authors@R:
     person("Lorenz A.", "Kapsner", , "lorenz.kapsner@gmail.com", role = c("cre", "aut", "cph"),
            comment = c(ORCID = "0000-0003-1866-860X"))
@@ -29,7 +29,7 @@ VignetteBuilder:
     quarto
 Config/testthat/edition: 3
 Config/testthat/parallel: false
-Date/Publication: 2026-01-17 13:47:40.348039 UTC
+Date/Publication: 2026-01-18 09:54:25.00001 UTC
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 SystemRequirements: Quarto command line tools
