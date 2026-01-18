@@ -4,6 +4,13 @@
 
 ## Unreleased (2026-01-18)
 
+#### Other changes
+
+-   udpated dev-version
+    ([da43731](https://github.com/kapsner/sjtable2df/tree/da43731f49aa3aba5e4fde1d5e2b0e355e319e31))
+
+## v0.0.5 (2026-01-18)
+
 #### CI
 
 -   updated gha
@@ -12,14 +19,14 @@
 #### Other changes
 
 -   bump to v0.0.5
-    ([5556641](https://github.com/kapsner/sjtable2df/tree/5556641efa252d603815985fa1cbc6ac3982e756))
+    ([ac62651](https://github.com/kapsner/sjtable2df/tree/ac62651b79370cc91f7dfafffbc5d699b276897a))
 -   added pre-commit hooks
     ([b48c506](https://github.com/kapsner/sjtable2df/tree/b48c50618674ef451a9d6563f03cba565f1af4d8))
 -   updated dev-version
     ([4200d82](https://github.com/kapsner/sjtable2df/tree/4200d821d814687cb96ad3e83824ab279bc34996))
 
 Full set of changes:
-[`v0.0.4...5556641`](https://github.com/kapsner/sjtable2df/compare/v0.0.4...5556641)
+[`v0.0.4...v0.0.5`](https://github.com/kapsner/sjtable2df/compare/v0.0.4...v0.0.5)
 
 ## v0.0.4 (2025-04-04)
 
